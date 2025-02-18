@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <img src="samplelogo-Photoroom.png" alt="" />
+          <h1>Visionaries</h1>
+        </div>
+        <div class="navbar">
+          <ul id="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="">Analysis</a></li>
+            <li><a href="">Predictions</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact us</a></li>
+          </ul>
+          <ul class="dropdown">
+            <li class="dropdown-menu popup-menu">
+              <a href="#" class="hamburger" id="hamburger">
+                {% load static %}
+                <img src={% static 'navbar menu.png' %} alt="Navbar Hamburger menu" />
+              </a>
+
+              <ul id="navlist-popup">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Analysis</a></li>
+                <li><a href="">Predictions</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact us</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <footer>
+        <div class="footer-text">
+          <div class="footer-img">
+            <h4>Follow-us</h4>
+            <div class="icon">
+              <a href="https://www.facebook.com">
+                {% load static %}
+                <img src={% static 'facebooklogo.jpeg' %} alt="Facebook.com" />
+              </a>
+              <a href="https://www.instagram.com">
+                <img src="instagramlogo.jpeg" alt="Instagram.com" />
+              </a>
+              <a href="https://www.twitter.com">
+                <img src="twitterlogo.jpeg" alt="twitter.com" />
+              </a>
+              <a href="https://www.youtube.com">
+                <img src="youtubelogo.jpeg" alt="youtube.com" />
+              </a>
+              <a href="https://www.linkedin.com">
+                <img src="linkedin.jpeg" alt="linkedin.com" />
+              </a>
+            </div>
+          </div>
+          <div class="contact">
+            <h4>Contact-us</h4>
+
+            <div class="contactdetails">
+              <ul>
+                <li><a href="tel:+911234567890">911234567890</a></li>
+                <li><a href="mailto:abc@gmail.com">abc@gmail.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="data">
+            <h4>Data</h4>
+
+            <div class="datadetails">
+              <ul>
+                <li><a href="">Documentation</a></li>
+                <li><a href="">Current Data</a></li>
+                <li><a href="">Predicted Data</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

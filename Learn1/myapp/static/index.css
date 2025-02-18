@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    /* overflow-x: hidden; */
+}
+
+.container .header{
+    min-width: 100vw;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 5rem;
+    position: fixed;
+    z-index: 1000;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap : 10px;
+    color  : white;
+    justify-content: space-between;
+}
+.logo img{
+    height : 3rem;
+    width : auto;
+}
+
+.navbar{
+    width : max(40%, 450px);
+}
+.navbar ul{
+    display: flex;
+    width : 100%;
+    justify-content: space-between;
+}
+.navbar ul a{
+    text-decoration: none;
+    color : white;
+    font-size: 17px;
+    font-weight: 600;
+}
+.logo h1{
+    font-size: 1.6rem;
+}
+.logo h1::before{
+    /* content: "Volt "; */
+    color : aqua;
+}
+.navbar ul a:hover {
+    transition-duration: 0.5s;
+    color:  aqua;
+}
+
+
+/* for small devices handling popup menu  */
+
+
+.popup-menu{
+    width: max-content;
+    display: none;
+}
+.popup-menu ul{
+    display: none;
+    position: absolute;
+    top : min(10vh, 64px);
+    right : 1%;
+    list-style: none;
+    width: max-content;
+}
+.dropdown-menu:hover #navlist-popup{
+         display: flex;
+         flex-direction: column;
+         background-color: rgb(34, 34, 34);
+         text-align: center;
+         padding : 0.3rem 1.3rem;
+         z-index: 2;
+         border-radius: 4px;
+         gap : 10px!important;
+         padding-bottom: 14px;
+}
+ 
+@media screen and (max-width : 950px) {
+    .popup-menu, .navbar{
+        display: flex;
+        flex-direction: column;
+        width : max-content;
+        gap : 1rem;
+        align-items: center;
+        width: max-content;
+    }
+    .popup-menu img{
+        width : 33px;
+        height : auto;
+    }
+    .header{
+        padding : 0.5rem 2rem!important;
+    }
+    #navlist{
+        display: none;
+    }
+    .hamburger{
+        max-width: max-content;
+        cursor: pointer;
+    }
+    #navlist-popup li a{
+        font-size: 16px;
+    }
+    #navlist-popup li a:focus{
+        color : aqua;
+    }
+    #navlist-popup{
+        display: none;
+    }
+    .dropdown-menu.active #navlist-popup{
+        display:  block;
+    }
+}
+
+
+
+
+footer {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    display: flex;
+}
+
+.footer-text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap : 30px;
+}
+
+.footer-img, .contact,.data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-img h4, .contact h4,data h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-img .icon {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-img .icon a img {
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-img .icon img:hover {
+    transform: scale(1.2);
+}
+
+.contact.contactdetails ul {
+    list-style: none;
+}
+
+.contact ul li {
+    margin-bottom: 3px;
+    font-size: 14px;
+    color: white;
+}
+
+
+.data .datadetails ul li a {
+    text-decoration: none;
+    color : white!important;
+}
+
+.data ul li {
+    margin-bottom: 3px;
+    font-size: 14px;
+    color: white;
+}
+
+.contactdetails ul li a{
+    color : white!important;
+}
+
+.data ul li a:hover {
+    color: aqua;
+    transition: 0.3s;
+}
+
+@media screen and (max-width : 400px)  {
+     .footer-text {
+         display:  flex;
+         flex-direction: column;
+         align-items: center;
+     }
+     .footer-img{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
+
+}
+
+
+/* home page style */
+
+
+.home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+.home-page video{
+    width:  100vw;
+    -webkit-filter: blur(8px);
+    filter : blur(8px);
+    top : 0;
+    object-fit: cover;
+    height: 100vh;
+    overflow-x: hidden;
+    z-index: -1;
+}
+.upper-container {
+    position: absolute;
+    display: flex;
+    flex-direction:  column;
+    justify-content: center;
+    align-items: center;
+    top : 40%;
+    background-color: rgba(0, 0, 0, 0.485);
+    width : 60%;
+    border : 4px solid rgb(255, 252, 252);
+    color : white;
+    padding : 2rem;
+    vertical-align: center;
+}
+.upper-container p{
+    text-align:  center;
+}
+.view {
+    width : 100vw;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+}
+@media screen and (max-width:700px) {
+     .upper-container h1{
+           font-size: 140%;
+     }
+     .upper-container p{
+           font-size: 90%;
+     }
+}
+
+.home {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 4%;
+ }
+ .home .home-desc {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    
+ }
+ .home .home-desc p {
+    margin-left: 10%;
+    margin-right: auto;
+    margin-top: 5%;
+    color: #333333;
+    padding: 0.5rem;
+    font-size: 15px;
+    line-height: 2;
+    text-transform: capitalize;
+    text-align: center;
+ }
+ .home .home-image {
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    float: inline-end;
+ }
+ .home .home-image img {
+    width: 550px;
+    height: 250px;
+ }
+ @media screen and (max-width:1070px) {
+    .home {
+        width: 100%;
+       
+    }
+    .home .home-desc p{
+        margin-top: 5%;
+        padding: 0.2rem;
+        line-height: 1;
+        width: 100%;
+    }
+    .home .home-image img{
+       display: none;
+    }
+}
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-image {
+    display: flex;
+    align-items : center;
+}
+.home .homedesc p{
+    font-size: 10px;
+}

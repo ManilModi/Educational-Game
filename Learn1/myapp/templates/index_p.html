@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <img src="samplelogo-Photoroom.png" alt="" />
+          <h1>Delhi Power Predictions</h1>
+        </div>
+        <div class="navbar">
+          <ul id="navlist">
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="GraphForPrediction.html" target="_blank">Analysis</a></li> -->
+            <!-- <li><a href="GraphForNormal.html" target="_blank">Predictions</a></li> -->
+            <li><a href="about.html" target="_blank">About</a></li>
+            <li><a href="LOGIN.HTML" target="_blank">Login</a></li>
+            <!-- <li><a href="Cred.html" target="_blank">Get Credentials</a></li> -->
+            <li><a href="Register.html" target="_blank">Register</a></li>
+          </ul>
+          <ul class="dropdown">
+            <li class="dropdown-menu popup-menu">
+              <a href="#" class="hamburger" id="hamburger">
+                <img src="navbar menu.png" alt="Navbar Hamburger menu" />
+              </a>
+
+              <ul id="navlist-popup">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Analysis</a></li>
+                <li><a href="">Predictions</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="">Contact us</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--- home page -->
+     
+      <div class="home-page">
+           <div class="view">
+            {% load static %}
+             <video src={% static 'delhi.mp4' %} autoplay muted loop>
+                
+             </video>
+           </div>
+           <div class="upper-container">
+             
+              <h1>Delhi Power Predictions</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Laboriosam veniam esse molestias voluptatibus nostrum eaque adipisci non sed ex cum.</p>
+           </div>
+
+      
+      <div class="home">
+
+      
+      <div class="home-desc">
+        
+        <p>What you wear is how you present yourself to the world, especially today,
+        when human contacts are so quick. Fashion is instant language.You gotta have style. It helps you get down the stairs.
+        It helps you get up in the morning. It’s a way of life. Without it, you’re nobody. I’m not talking about lots of clothes.
+        </p>
+        <div class="home-image">
+          <img src="home-image.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      </div>
+      <footer>
+        <div class="footer-text">
+          <div class="footer-img">
+            <h4>Follow-us</h4>
+            <div class="icon">
+              <a href="https://www.facebook.com">
+                <img src="facebooklogo.jpeg" alt="Facebook.com" />
+              </a>
+              <a href="https://www.instagram.com">
+                <img src="instagramlogo.jpeg" alt="Instagram.com" />
+              </a>
+              <a href="https://www.twitter.com">
+                <img src="twitterlogo.jpeg" alt="twitter.com" />
+              </a>
+              <a href="https://www.youtube.com">
+                <img src="youtubelogo.jpeg" alt="youtube.com" />
+              </a>
+              <a href="https://www.linkedin.com">
+                <img src="linkedin.jpeg" alt="linkedin.com" />
+              </a>
+            </div>
+          </div>
+          <div class="contact">
+            <h4>Contact-us</h4>
+
+            <div class="contactdetails">
+              <ul>
+                <li><a href="tel:+911234567890">911234567890</a></li>
+                <li><a href="mailto:abc@gmail.com">abc@gmail.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="data">
+            <h4>Data</h4>
+
+            <div class="datadetails">
+              <ul>
+                <li><a href="">Documentation</a></li>
+                <li><a href="">Current Data</a></li>
+                <li><a href="">Predicted Data</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

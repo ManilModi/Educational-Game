@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Demand Graph</title>
+</head>
+<body>
+    <h2>Select a Date to View Electricity Demand</h2>
+
+    <form method="GET">
+        <label for="date">Choose Date:</label>
+        <input type="date" id="date" name="date" value="{{ selected_date }}">
+        <button type="submit">Show Graph</button>
+    </form>
+
+    <br>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        <div id="graph-container">
+            {{ plot_div|safe }}
+        </div>
+    {% endif %}
+</body>
+</html>

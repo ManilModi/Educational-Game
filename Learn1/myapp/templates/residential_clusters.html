@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residential Clustering</title>
+    <style>
+        #map-container {
+            width: 80%; /* Reduce width if needed */
+            height: 400px; /* Reduced height */
+            margin: auto;
+            border: 2px solid black; /* Optional: To visually separate the map */
+        }
+        #elbow-plot {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Residential Clustering Map</h1>
+    <div id="map-container">
+        {{ map_html|safe }}
+    </div>
+
+    <h2>Elbow Method Graph</h2>
+    <div id="elbow-plot">
+        <img src="data:image/png;base64,{{ plot_data }}" alt="Elbow Method">
+    </div>
+</body>
+</html>
