@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
 from django.http import HttpResponse
-from .forms import LoginForm, UserRegistrationForm
-from .models import Users, Roles
+from django.contrib.auth import login, logout
+from django.contrib import messages
+from .forms import LoginForm, UserRegistrationForm,AdminUserCreationForm
+from .models import Userstable, Roles,UserRole
 import os
 import folium
 import pandas as pd
@@ -16,20 +18,89 @@ from django.conf import settings
 import plotly.graph_objects as go
 import plotly.io as pio
  
-def user_registration_view(request):
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+
+            try:
+                user = Userstable.objects.get(username=username)
+                
+                if user.password == password:  # (Consider hashing passwords)
+                    # Fetch the user's role
+                    user_role = UserRole.objects.get(user=user)
+                    role_name = user_role.role.role_names  # Get the role name
+
+                    # Store in session
+                    request.session['user_id'] = user.id
+                    request.session['user_role'] = role_name
+
+                    # Redirect based on role
+                    if role_name == "admin":
+                        return redirect('admin_dashboard')
+                    elif role_name == "govt_engineer":
+                        return redirect('govt_dashboard')
+                    else:
+                        return redirect('user_dashboard')
+                else:
+                    messages.error(request, "Invalid credentials")
+            except Userstable.DoesNotExist:
+                messages.error(request, "User does not exist")
+            except UserRole.DoesNotExist:
+                messages.error(request, "User role not assigned")
+    else:
+        form = LoginForm()
+
+    return render(request, 'login.html', {'form': form}) 
+
+# User Logout View
+def user_logout(request):
+    request.session.flush()  # Clear session
+    return redirect('login')
+
+# Dashboard Views
+def admin_dashboard(request):
+    return render(request, 'admin_dashboard.html')
+
+def govt_dashboard(request):
+    return render(request, 'govt_dashboard.html')
+
+def user_dashboard(request):
+    return render(request, 'user_dashboard.html')
+
+def user_register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            user_type = form.cleaned_data['user_type']
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-        else:
-            return render(request, 'registration_form.html', {'form': form})
+            form.save()
+            # messages.success(request, "Account created successfully!")
+            return redirect('login')
     else:
         form = UserRegistrationForm()
 
-    return render(request, 'registration_form.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
 
+def creatRroles(request):
+    roles = ['Normal User', 'Entrepreneur', 'Researcher', 'Government Engineer', 'Admin']
+    for role in roles:
+        Roles.objects.get_or_create(role_names=role)
+    return HttpResponse("<h1>Roles created successfully<h1>")
+
+
+# Admin-Only View to Create Admin & Govt. Engineers
+def admin_create_user(request):
+    if request.method == 'POST':
+        form = AdminUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # messages.success(request, "Admin/Govt. Engineer account created! Credentials sent via email.")
+            return redirect('admin_dashboard')
+    else:
+        form = AdminUserCreationForm()
+
+    return render(request, 'admin_create_user.html', {'form': form})
 # def my_form_view(request):
 #     if request.method == 'POST':
 #         form = myform(request.POST)

@@ -1,29 +1,38 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password, check_password
 
-
-class Users(models.Model):
-    
-    USER_TYPE_CHOICES = [
-        ('normal', 'Normal User'),
-        ('entrepreneur', 'Entrepreneur'),
-        ('researcher', 'Researcher'),
-        ('govt. engineer', 'Government Engineer'),
-        ('admin', 'Admin')
-    ]
-    
-    user_id=models.IntegerField(max_length=1000)
-    role=models.CharField(choices=USER_TYPE_CHOICES, max_length=50)
+# User Model (Basic User Info Only)
+class Userstable(models.Model):
     username = models.CharField(max_length=50, unique=True)
-    password = models.CharField(max_length=50)
-    
+    password = models.CharField(max_length=128)  # Storing hashed passwords
+
     def __str__(self):
         return self.username
 
+    def set_password(self, raw_password):
+        self.password = make_password(raw_password)
+        self.save()
 
+    def check_password(self, raw_password):
+        return check_password(raw_password, self.password)
+
+# Predefined Roles Model
 class Roles(models.Model):
-    role_id=models.IntegerField(max_length=5)
-    user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
-    role_names=models.CharField(max_length=50)
+    role_names = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.role_names
+
+# UserRole Model (Junction Table for User-Role Mapping)
+class UserRole(models.Model):
+    user = models.ForeignKey(Userstable, on_delete=models.CASCADE, related_name='user_roles')
+    role = models.ForeignKey(Roles, on_delete=models.CASCADE, related_name='role_users')
+
+    def __str__(self):
+        return f"{self.user.username} - {self.role.role_names}"
+
+# class Institute:
+#     pass
 
 # class NormalUser(models.Model):
 #     username = models.CharField(max_length=50, unique=True)

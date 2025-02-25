@@ -3,119 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Delhi Power Predictions</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
   </head>
   <body>
     <div class="container">
-      <div class="header">
+      <!-- Header Section -->
+      <header class="header">
         <div class="logo">
-          <img src="samplelogo-Photoroom.png" alt="" />
+          <!-- <img src="{% static 'samplelogo-Photoroom.png' %}" alt="Delhi Power Logo" /> -->
           <h1>Delhi Power Predictions</h1>
         </div>
-        <div class="navbar">
+        <nav class="navbar">
           <ul id="navlist">
-            <li><a href="index.html">Home</a></li>
-            <!-- <li><a href="GraphForPrediction.html" target="_blank">Analysis</a></li> -->
-            <!-- <li><a href="GraphForNormal.html" target="_blank">Predictions</a></li> -->
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="about.html" target="_blank">About</a></li>
             <li><a href="LOGIN.HTML" target="_blank">Login</a></li>
-            <!-- <li><a href="Cred.html" target="_blank">Get Credentials</a></li> -->
-            <li><a href="Register.html" target="_blank">Register</a></li>
+            <li><a href="{% url 'user_registration' %}" target="_blank">Register</a></li>
           </ul>
           <ul class="dropdown">
             <li class="dropdown-menu popup-menu">
               <a href="#" class="hamburger" id="hamburger">
-                <img src="navbar menu.png" alt="Navbar Hamburger menu" />
+                <img src="{% static 'navbar menu.png' %}" alt="Navbar Menu" />
               </a>
-
               <ul id="navlist-popup">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">Analysis</a></li>
-                <li><a href="">Predictions</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="#">Analysis</a></li>
+                <li><a href="#">Predictions</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="">Contact us</a></li>
+                <li><a href="#">Contact Us</a></li>
               </ul>
             </li>
           </ul>
+        </nav>
+      </header>
+
+      <!-- Home Page Section -->
+      <section class="home-page">
+        <div class="view">
+          <video src="{% static 'delhi.mp4' %}" autoplay muted loop>
+            Your browser does not support the video tag.
+          </video>
         </div>
-      </div>
+        <div class="upper-container">
+          <h1>Delhi Power Predictions</h1>
+          <p>Predicting Delhi's electricity demand with data-driven insights and AI models.</p>
+        </div>
 
-      <!--- home page -->
-     
-      <div class="home-page">
-           <div class="view">
-            {% load static %}
-             <video src={% static 'delhi.mp4' %} autoplay muted loop>
-                
-             </video>
-           </div>
-           <div class="upper-container">
-             
-              <h1>Delhi Power Predictions</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Laboriosam veniam esse molestias voluptatibus nostrum eaque adipisci non sed ex cum.</p>
-           </div>
-
-      
-      <div class="home">
-
-      
-      <div class="home-desc">
-        
-        <p>What you wear is how you present yourself to the world, especially today,
-        when human contacts are so quick. Fashion is instant language.You gotta have style. It helps you get down the stairs.
-        It helps you get up in the morning. It’s a way of life. Without it, you’re nobody. I’m not talking about lots of clothes.
-        </p>
-        <div class="home-image">
-          <img src="home-image.jpg" alt="">
+        <div class="home">
+          <div class="home-desc">
+            <p>Delhi's energy landscape is ever-evolving. Dive deep into power consumption patterns, future trends, and sustainability strategies with our cutting-edge analytics platform.</p>
+            <div class="home-image">
+              <img src="{% static 'home-image.jpg' %}" alt="Delhi Power Image">
+            </div>
           </div>
         </div>
-      </div>
-      </div>
+      </section>
+
+      <!-- Footer Section -->
       <footer>
         <div class="footer-text">
           <div class="footer-img">
-            <h4>Follow-us</h4>
+            <h4>Follow Us</h4>
             <div class="icon">
-              <a href="https://www.facebook.com">
-                <img src="facebooklogo.jpeg" alt="Facebook.com" />
-              </a>
-              <a href="https://www.instagram.com">
-                <img src="instagramlogo.jpeg" alt="Instagram.com" />
-              </a>
-              <a href="https://www.twitter.com">
-                <img src="twitterlogo.jpeg" alt="twitter.com" />
-              </a>
-              <a href="https://www.youtube.com">
-                <img src="youtubelogo.jpeg" alt="youtube.com" />
-              </a>
-              <a href="https://www.linkedin.com">
-                <img src="linkedin.jpeg" alt="linkedin.com" />
-              </a>
+              <a href="https://www.facebook.com"><img src="{% static 'facebooklogo.jpeg' %}" alt="Facebook" /></a>
+              <a href="https://www.instagram.com"><img src="{% static 'instagramlogo.jpeg' %}" alt="Instagram" /></a>
+              <a href="https://www.twitter.com"><img src="{% static 'twitterlogo.jpeg' %}" alt="Twitter" /></a>
+              <a href="https://www.youtube.com"><img src="{% static 'youtubelogo.jpeg' %}" alt="YouTube" /></a>
+              <a href="https://www.linkedin.com"><img src="{% static 'linkedin.jpeg' %}" alt="LinkedIn" /></a>
             </div>
           </div>
-          <div class="contact">
-            <h4>Contact-us</h4>
 
-            <div class="contactdetails">
-              <ul>
-                <li><a href="tel:+911234567890">911234567890</a></li>
-                <li><a href="mailto:abc@gmail.com">abc@gmail.com</a></li>
-              </ul>
-            </div>
+          <div class="contact">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><a href="tel:+911234567890">+91 1234567890</a></li>
+              <li><a href="mailto:abc@gmail.com">abc@gmail.com</a></li>
+            </ul>
           </div>
+
           <div class="data">
             <h4>Data</h4>
-
-            <div class="datadetails">
-              <ul>
-                <li><a href="">Documentation</a></li>
-                <li><a href="">Current Data</a></li>
-                <li><a href="">Predicted Data</a></li>
-              </ul>
-            </div>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Current Data</a></li>
+              <li><a href="#">Predicted Data</a></li>
+            </ul>
           </div>
         </div>
       </footer>

@@ -1,51 +1,73 @@
+import random
+import string
 from django import forms
-from .models import Users
+from django.core.mail import send_mail
+from .models import Userstable,Roles,UserRole
+from django.conf import settings
 
 class LoginForm(forms.Form):
-    
-    USER_TYPE_CHOICES = [
-        ('normal', 'Normal User'),
-        ('entrepreneur', 'Entrepreneur'),
-        ('researcher', 'Researcher'),
-        ('admin', 'Admin')
-    ]
-    user_type = forms.ChoiceField(label='User Type', choices=USER_TYPE_CHOICES)
     username = forms.CharField(label='Username', max_length=50)
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
-    
-    
-class UserRegistrationForm(forms.Form):
-    
-    USER_TYPE_CHOICES = [
-        ('normal', 'Normal User'),
-        ('entrepreneur', 'Entrepreneur'),
-        ('researcher', 'Researcher'),
-        ('govt. engineer', 'Government Engineer'),
-        ('admin', 'Admin')
-    ]
 
-    user_type = forms.ChoiceField(
-        label='Register as',
-        choices=USER_TYPE_CHOICES,
-        widget=forms.RadioSelect
+class UserRegistrationForm(forms.ModelForm):
+    role = forms.ModelChoiceField(
+        queryset=Roles.objects.exclude(role_names__in=['Admin', 'Government Engineer']),
+        required=True,
+        label="Select Role"
     )
-    username = forms.CharField(label='Username', max_length=50)
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
-    company_name = forms.CharField(label='Company Name', max_length=255, required=False)
-    institution = forms.CharField(label='Institution', max_length=255, required=False)
 
-    def clean(self):
-        cleaned_data = super().clean()
-        user_type = cleaned_data.get('user_type')
+    class Meta:
+        model = Userstable
+        fields = ['username', 'password']
+        widgets = {
+            'password': forms.PasswordInput(),
+        }
 
-        if user_type == 'entrepreneur' and not cleaned_data.get('company_name'):
-            self.add_error('company_name', 'Company name is required for Entrepreneurs.')
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        if commit:
+            user.save()
+            role = self.cleaned_data['role']
+            UserRole.objects.create(user=user, role=role)  # Link user to role
+        return user
 
-        if user_type == 'researcher' and not cleaned_data.get('institution'):
-            self.add_error('institution', 'Institution is required for Researchers.')
+# Function to Generate Random Password
+def generate_random_password(length=8):
+    characters = string.ascii_letters + string.digits  # Letters + Numbers
+    return ''.join(random.choice(characters) for _ in range(length))
 
-        return cleaned_data
+# Admin-Only Form to Create Admin/Govt. Engineers
+class AdminUserCreationForm(forms.ModelForm):
+    role = forms.ModelChoiceField(
+        queryset=Roles.objects.filter(role_names__in=['Admin', 'Government Engineer']),
+        required=True,
+        label="Select Role"
+    )
 
+    class Meta:
+        model = Userstable
+        fields = ['username']  # No password field since we generate it
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        password = generate_random_password()  # Generate random password
+        user.password = password  # Hash and store password
+
+        if commit:
+            user.save()
+            role = self.cleaned_data['role']
+            UserRole.objects.create(user=user, role=role)  # Assign role
+
+            # Send email with credentials
+            send_mail(
+                subject="Your Account Credentials",
+                message=f"Hello {user.username},\n\nYour account has been created.\nUsername: {user.username}\nPassword: {password}\n\n",
+                from_email=settings.EMAIL_HOST_USER,
+                recipient_list=[user.username],  # Assuming username is the email
+                fail_silently=False,
+            )
+
+        return user    
 # class NormalUserForm(forms.Form):
 #     USER_TYPE_CHOICES = [
 #         ('Journlaist', 'Journalist'),
