@@ -18,9 +18,26 @@
         <nav class="navbar">
           <ul id="navlist">
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="about.html" target="_blank">About</a></li>
-            <li><a href="LOGIN.HTML" target="_blank">Login</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li>
+              {% if request.session.user_role == "Normal User" %}
+                  <a href="{% url 'normal_dashboard' %}">Dashboard</a>
+              {% elif request.session.user_role == "Entrepreneur" %}
+                  <a href="{% url 'entrepreneur_dashboard' %}">Dashboard</a>
+              {% elif request.session.user_role == "Researcher" %}
+                  <a href="{% url 'researcher_dashboard' %}">Dashboard</a>
+              {% elif request.session.user_role == "Government Engineer" %}
+                  <a href="{% url 'govt_dashboard' %}">Dashboard</a>
+              {% elif request.session.user_role == "Admin" %}
+                  <a href="{% url 'admin_dashboard' %}">Dashboard</a>
+              {% endif %}
+          </li>
+            {% if request.session.user_id %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}" target="_blank">Login</a></li>
             <li><a href="{% url 'user_registration' %}" target="_blank">Register</a></li>
+            {% endif %}
           </ul>
           <ul class="dropdown">
             <li class="dropdown-menu popup-menu">
@@ -89,6 +106,7 @@
               <li><a href="#">Documentation</a></li>
               <li><a href="#">Current Data</a></li>
               <li><a href="#">Predicted Data</a></li>
+              <li><a href="{% url 'electricity_demand_plot' %}">Predicted Data</a></li>
             </ul>
           </div>
         </div>

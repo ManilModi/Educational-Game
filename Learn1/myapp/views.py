@@ -2,9 +2,14 @@ from django.shortcuts import render, redirect
 from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
 from django.http import HttpResponse
 from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout,authenticate
 from django.contrib import messages
 from .forms import LoginForm, UserRegistrationForm,AdminUserCreationForm
+from .forms import LoginForm, UserRegistrationForm,AdminUserCreationForm,PasswordChangeForm, DeleteUserForm
+from .forms import PasswordChangeForm, generate_random_password
+from django.core.mail import send_mail
 from .models import Userstable, Roles,UserRole
+from .decorators import role_required
 import os
 import folium
 import pandas as pd
@@ -17,7 +22,9 @@ from sklearn.decomposition import PCA
 from django.conf import settings
 import plotly.graph_objects as go
 import plotly.io as pio
- 
+from datetime import datetime, timedelta
+import xgboost as xgb
+
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -27,7 +34,7 @@ def user_login(request):
 
             try:
                 user = Userstable.objects.get(username=username)
-                
+
                 if user.password == password:  # (Consider hashing passwords)
                     # Fetch the user's role
                     user_role = UserRole.objects.get(user=user)
@@ -37,13 +44,13 @@ def user_login(request):
                     request.session['user_id'] = user.id
                     request.session['user_role'] = role_name
 
-                    # Redirect based on role
-                    if role_name == "admin":
+
+                    if role_name == "Admin":
                         return redirect('admin_dashboard')
-                    elif role_name == "govt_engineer":
+                    elif role_name == "Government Engineer":
                         return redirect('govt_dashboard')
-                    else:
-                        return redirect('user_dashboard')
+                    elif role_name == "Normal User":
+                        return redirect('normal_dashboard')
                 else:
                     messages.error(request, "Invalid credentials")
             except Userstable.DoesNotExist:
@@ -60,15 +67,39 @@ def user_logout(request):
     request.session.flush()  # Clear session
     return redirect('login')
 
+def about(request):
+    return render(request, 'about.html') 
+
 # Dashboard Views
+@role_required(allowed_roles=['Admin'])
 def admin_dashboard(request):
+    if 'user_id' not in request.session:
+        return redirect('login')  # Force login if not authenticated
     return render(request, 'admin_dashboard.html')
 
+@role_required(allowed_roles=['Government Engineer'])
 def govt_dashboard(request):
+    if 'user_id' not in request.session:
+        return redirect('login')  # Force login if not authenticated
     return render(request, 'govt_dashboard.html')
 
-def user_dashboard(request):
-    return render(request, 'user_dashboard.html')
+@role_required(allowed_roles=['Normal User'])
+def normal_dashboard(request):
+    if 'user_id' not in request.session:
+        return redirect('login')  # Force login if not authenticated
+    return render(request, 'normal_dashboard.html')
+
+@role_required(allowed_roles=['Entrepreneur'])
+def entrepreneur_dashboard(request):
+    if 'user_id' not in request.session:
+        return redirect('login')  # Force login if not authenticated
+    return render(request, 'entrepreneur_dashboard.html')
+
+@role_required(allowed_roles=['Researcher'])
+def researcher_dashboard(request):
+    if 'user_id' not in request.session:
+        return redirect('login')  # Force login if not authenticated
+    return render(request, 'researcher_dashboard.html')
 
 def user_register(request):
     if request.method == 'POST':
@@ -90,6 +121,7 @@ def creatRroles(request):
 
 
 # Admin-Only View to Create Admin & Govt. Engineers
+@role_required(allowed_roles=['Admin'])
 def admin_create_user(request):
     if request.method == 'POST':
         form = AdminUserCreationForm(request.POST)
@@ -101,192 +133,86 @@ def admin_create_user(request):
         form = AdminUserCreationForm()
 
     return render(request, 'admin_create_user.html', {'form': form})
-# def my_form_view(request):
-#     if request.method == 'POST':
-#         form = myform(request.POST)
-#         if form.is_valid():
-#             print('valid')
-#     else:
-#         form = myform()
 
-#     return render(request, 'my_template.html', {'form': form})
+def unauthorized_access(request):
+    return render(request, 'unauthorized.html')  # Create unauthorized.html template
 
-# def registration_view(request):
-#     if request.method == 'POST':
-#         form = RegistrationForm(request.POST)
-#         if form.is_valid():
-#             data = form.cleaned_data
-#             return render(request, 'details.html', {'data': data})
-#     else:
-#         form = RegistrationForm()
-#     return render(request, 'registration_form.html', {'form': form})
+@role_required(allowed_roles=['Admin'])
+def update_credential(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
 
-# def create_view(request):
-#     context={}
+            try:
+                user = Userstable.objects.get(username=username)
 
-#     form=model_form(request.POST or None)
-#     if form.is_valid():
-#         return render(request, "message.html")
-#         form.save()
-#     context['form']=form
-#     return render(request, "create_view.html", context)
+                # Generate a random password
+                new_password = generate_random_password()
 
-# def list_view(request):
+                # Update password in plain text as per your requirement
+                user.password = new_password
+                user.save()
 
-#     context ={}
-#     context["dataset"] = my_model.objects.all()
-#     return render(request, "list_view.html", context)
+                # Send the new password via email (only if Admin/Gov Engineer)
+                send_mail(
+                    subject='Your Password Has Been Updated',
+                    message=f'Your new password is: {new_password}',
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[username],  # Using username as email
+                    fail_silently=False,
+                )
 
+                messages.success(request, f'Password updated and emailed to {username}')
+                return redirect('admin_dashboard')
 
-# def detail_view(request, id):
-#     context ={}
-#     context["data"] = my_model.objects.get(id = id)
-#     return render(request, "detail_view.html", context)
+            except Userstable.DoesNotExist:
+                messages.error(request, 'User not found.')
 
+    else:
+        form = PasswordChangeForm()
 
-# def update_view(request, id):
+    return render(request, 'change_password.html', {'form': form})
 
-#     context ={}
-#     obj = get_object_or_404(my_model, id = id)
-#     form = model_form(request.POST or None, instance = obj)
+@role_required(allowed_roles=['Admin'])
+def delete_user(request):
+    if request.method == 'POST':
+        form = DeleteUserForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
 
-#     if form.is_valid():
-#         return render(request, "message.html")
-#         form.save()
-#         return HttpResponseRedirect("/myapp/"+id)
+            try:
+                user = Userstable.objects.get(username=username)
+                
+                user_email = user.username
 
-#     context["form"] = form
-#     return render(request, "update_view.html", context)
+                user.delete()
 
+                send_mail(
+                    subject='Your Account Has Been Deleted',
+                    message='Your account has been removed by the administrator.',
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[user_email],
+                    fail_silently=False,
+                )
 
-# def delete_view(request, id):
-#     context ={}
-#     obj = get_object_or_404(my_model, id = id)
+                messages.success(request, f'User {username} has been deleted.')
+                return redirect('admin_dashboard')
 
-#     if request.method =="POST":
-#         obj.delete()
-#         return HttpResponseRedirect("/myapp/list")
-#     return render(request, "delete_view.html", context)
+            except Userstable.DoesNotExist:
+                messages.error(request, 'User not found.')
+
+    else:
+        form = DeleteUserForm()
+
+    return render(request, 'delete_user.html', {'form': form})
 
 def p_home(request):
     return render(request, "index_p.html")
 
 
-def electricity_demand_plot_daily(request):
-
-    dataset_path = os.path.join(settings.BASE_DIR, 'myapp', 'data', 'daily_testset.csv')
-
-    if not os.path.exists(dataset_path):
-        return render(request, 'electricity_demand.html', {'error': 'Dataset not found!'})
-
-    df = pd.read_csv(dataset_path, parse_dates=['timestamp'])
-
-    df_month = df[(df['timestamp'] >= '2024-01-01') & (df['timestamp'] <= '2024-01-31')]
-
-    peak_day = df_month.loc[df_month['electricity_demand'].idxmax()]
-    lowest_day = df_month.loc[df_month['electricity_demand'].idxmin()]
-
-    fig = go.Figure()
-
-    fig.add_trace(go.Scatter(
-        x=df_month['timestamp'], y=df_month['electricity_demand'],
-        mode='lines', name='Electricity Demand',
-        line=dict(color='purple')
-    ))
-
-    fig.add_trace(go.Scatter(
-        x=[peak_day['timestamp'], lowest_day['timestamp']],
-        y=[peak_day['electricity_demand'], lowest_day['electricity_demand']],
-        mode="markers",
-        marker=dict(color='red', size=10, symbol='star'),
-        name="Highlighted Points"
-    ))
-
-    fig.add_annotation(
-        x=peak_day['timestamp'], y=peak_day['electricity_demand'],
-        text=f"Peak: {peak_day['electricity_demand']:.2f}",
-        showarrow=True, arrowhead=2, ax=30, ay=-40, bgcolor="yellow"
-    )
-
-    fig.add_annotation(
-        x=lowest_day['timestamp'], y=lowest_day['electricity_demand'],
-        text=f"Lowest: {lowest_day['electricity_demand']:.2f}",
-        showarrow=True, arrowhead=2, ax=-30, ay=40, bgcolor="lightgreen"
-    )
-
-    fig.update_xaxes(
-        dtick="D1", tickformat="%b %d", tickangle=45
-    )
-
-    graph_html = pio.to_html(fig, full_html=False)
-
-    return render(request, 'electricity_demand_daily.html', {'plot_div': graph_html})
-
-
-def electricity_demand_plot_hourly(request):
-    dataset_path = os.path.join(settings.BASE_DIR, 'myapp', 'data', '2023 dataset.csv')
-
-    if not os.path.exists(dataset_path):
-        return render(request, 'electricity_demand_hourly.html', {'error': 'Dataset not found!'})
-
-    df = pd.read_csv(dataset_path, parse_dates=['timestamp'])
-
-    df_day = df[(df['timestamp'] >= '2023-01-01') & (df['timestamp'] < '2023-01-02')]
-
-    if df_day.empty:
-        return render(request, 'electricity_demand_hourly.html', {'error': 'No data found for the selected day!'})
-
-    peak_point = df_day.loc[df_day['electricity_demand'].idxmax()]
-    lowest_point = df_day.loc[df_day['electricity_demand'].idxmin()]
-
-    fig = go.Figure()
-
-    fig.add_trace(go.Scatter(
-        x=df_day['timestamp'], y=df_day['electricity_demand'],
-        mode='lines+markers', name='Electricity Demand',
-        line=dict(color='purple'),
-        marker=dict(size=4)
-    ))
-
-    fig.add_trace(go.Scatter(
-        x=[peak_point['timestamp'], lowest_point['timestamp']],
-        y=[peak_point['electricity_demand'], lowest_point['electricity_demand']],
-        mode="markers",
-        marker=dict(color='red', size=10, symbol='circle'),
-        name="Highlighted Points"
-    ))
-
-    fig.add_annotation(
-        x=peak_point['timestamp'], y=peak_point['electricity_demand'],
-        text=f"Peak: {peak_point['electricity_demand']:.2f}",
-        showarrow=True, arrowhead=2, ax=30, ay=-40, bgcolor="yellow"
-    )
-
-    fig.add_annotation(
-        x=lowest_point['timestamp'], y=lowest_point['electricity_demand'],
-        text=f"Lowest: {lowest_point['electricity_demand']:.2f}",
-        showarrow=True, arrowhead=2, ax=-30, ay=40, bgcolor="lightgreen"
-    )
-
-    fig.update_xaxes(
-        tickformat="%H:%M",
-        tickangle=45
-    )
-
-    fig.update_layout(
-        title="Electricity Demand Over 24 Hours",
-        xaxis_title="Time of Day",
-        yaxis_title="Electricity Demand",
-        template="plotly_white"
-    )
-
-    graph_html = pio.to_html(fig, full_html=False)
-
-    return render(request, 'electricity_demand_hourly.html', {'plot_div': graph_html})
-
-
-
-def cluster_residential_areas(request):
+@role_required(allowed_roles=['Admin', 'Government Engineer', 'Researcher', 'Entrepreneur'])
+def residential_clusters(request):
 
     data_path = os.path.join(settings.BASE_DIR, 'myapp', 'data')
     tdf = pd.read_csv(os.path.join(data_path, 'ResidentialAreas_Here_Final.csv'))
@@ -294,7 +220,7 @@ def cluster_residential_areas(request):
 
     X = np.array(rdf.drop(['lat', 'lon'], axis=1))
 
-    pca = PCA(n_components=2)
+    pca = PCA(n_components=3)
     X_pca = pca.fit_transform(X)
 
     optimal_clusters = 3
@@ -302,7 +228,12 @@ def cluster_residential_areas(request):
     y_kmeans = kmeans.fit_predict(X_pca)
     rdf['cluster'] = y_kmeans
 
-    cluster_colors = {0: 'red', 1: 'orange', 2: 'green'}
+    # Define cluster labels and colors
+    cluster_info = {
+        0: {'color': 'red', 'label': 'High Electricity Demand'},
+        1: {'color': 'orange', 'label': 'Medium Electricity Demand'},
+        2: {'color': 'green', 'label': 'Low Electricity Demand'}
+    }
 
     this_map = folium.Map(prefer_canvas=True)
     mapping = {tuple(xy): name for name, xy in zip(tdf['name'], zip(tdf['lat'], tdf['lon']))}
@@ -312,60 +243,70 @@ def cluster_residential_areas(request):
             location=[row['lat'], row['lon']],
             radius=2,
             weight=5,
-            color=cluster_colors[row['cluster']],
+            color=cluster_info[row['cluster']]['color'],
             popup=mapping.get((row['lat'], row['lon']), "Unknown Location")
         ).add_to(this_map)
 
     this_map.fit_bounds(this_map.get_bounds())
 
+    # Adding a legend to the map
+    legend_html = '''
+     <div style="position: fixed; 
+                 bottom: 50px; left: 50px; width: 250px; height: 120px; 
+                 background-color: white; z-index:9999; padding: 10px;
+                 border-radius: 10px; box-shadow: 2px 2px 6px rgba(0,0,0,0.3);">
+     <h4>Cluster Legend</h4>
+     <p style="margin: 0;"><span style="color:red; font-weight:bold;">●</span> High Electricity Demand</p>
+     <p style="margin: 0;"><span style="color:orange; font-weight:bold;">●</span> Medium Electricity Demand</p>
+     <p style="margin: 0;"><span style="color:green; font-weight:bold;">●</span> Low Electricity Demand</p>
+     </div>
+    '''
+    
+    this_map.get_root().html.add_child(folium.Element(legend_html))
+
     map_html = this_map._repr_html_()
 
-    wcss = []
-    for cluster_size in range(1, 15):
-        kmeans_temp = KMeans(n_clusters=cluster_size, init='k-means++', max_iter=500, n_init=10, random_state=0)
-        kmeans_temp.fit(X_pca)
-        wcss.append(kmeans_temp.inertia_)
-
-    plt.figure(figsize=(8, 5))
-    plt.plot(range(1, 15), wcss, marker='o', linestyle='--')
-    plt.title('Elbow Method')
-    plt.xlabel('Number of Clusters')
-    plt.ylabel('WCSS')
-    plt.grid()
-
-    img = BytesIO()
-    plt.savefig(img, format='png')
-    img.seek(0)
-    plot_data = base64.b64encode(img.getvalue()).decode()
-
-    return render(request, 'residential_clusters.html', {'map_html': map_html, 'plot_data': plot_data})
+    return render(request, 'residential_clusters.html', {'map_html': map_html, 'cluster_info': cluster_info})
 
 
-from datetime import datetime
 
+
+@role_required(allowed_roles=['Admin', 'Government Engineer', 'Normal User', 'Researcher', 'Entrepreneur'])
 def electricity_demand_plot(request):
-    dataset_path = os.path.join(os.path.dirname(__file__), 'data', '2023 dataset.csv')
+    dataset_path = os.path.join(os.path.dirname(__file__), 'data', 'dummy_electricity_data.csv')
 
     if not os.path.exists(dataset_path):
-        return render(request, 'electricity_demand.html', {'error': 'Dataset not found!'})
+        return render(request, 'electricity_demand_hourly.html', {'error': 'Dataset not found!'})
 
-    df = pd.read_csv(dataset_path, parse_dates=['timestamp'])
+    # Load dataset with exception handling
+    try:
+        df = pd.read_csv(dataset_path, parse_dates=['timestamp'])
+    except Exception as e:
+        return render(request, 'electricity_demand_hourly.html', {'error': f'Error loading dataset: {str(e)}'})
 
+    # Get selected date from request
     selected_date = request.GET.get('date', '2023-01-01')
 
     try:
         selected_date = datetime.strptime(selected_date, "%Y-%m-%d").date()
     except ValueError:
-        return render(request, 'electricity_demand.html', {'error': 'Invalid date format! Use YYYY-MM-DD.'})
+        return render(request, 'electricity_demand_hourly.html', {'error': 'Invalid date format! Use YYYY-MM-DD.'})
 
+    # Filter dataset for the selected date
     df_day = df[df['timestamp'].dt.date == selected_date]
 
     if df_day.empty:
-        return render(request, 'electricity_demand.html', {'error': 'No data found for the selected date!'})
+        return render(request, 'electricity_demand_hourly.html', {'error': 'No data found for the selected date!'})
 
+    # Select only required columns
+    df_selected = df_day[['timestamp', 'electricity_demand', 'solar_generation']].copy()
+    df_table_html = df_selected.to_html(classes="table table-striped table-dark", index=False)
+
+    # Identify peak and lowest electricity demand points
     peak_point = df_day.loc[df_day['electricity_demand'].idxmax()]
     lowest_point = df_day.loc[df_day['electricity_demand'].idxmin()]
 
+    # Create a Plotly figure
     fig = go.Figure()
 
     fig.add_trace(go.Scatter(
@@ -404,9 +345,275 @@ def electricity_demand_plot(request):
         title=f"Electricity Demand for {selected_date}",
         xaxis_title="Time of Day",
         yaxis_title="Electricity Demand",
-        template="plotly_white"
+        template="plotly_white",
+        width=1200,
+        height=500
     )
 
     graph_html = pio.to_html(fig, full_html=False)
 
-    return render(request, 'electricity_demand.html', {'plot_div': graph_html, 'selected_date': selected_date})
+    return render(request, 'electricity_demand_hourly.html', {
+        'plot_div': graph_html,
+        'df_table_html': df_table_html,
+        'selected_date': selected_date
+    })
+
+@role_required(allowed_roles=['Admin', 'Government Engineer', 'Normal User', 'Researcher', 'Entrepreneur'])
+def electricity_demand_plot_daily(request):
+    dataset_path = os.path.join(os.path.dirname(__file__), 'data', 'dummy_electricity_daily_data.csv')
+
+    if not os.path.exists(dataset_path):
+        return render(request, 'electricity_demand_daily.html', {'error': 'Dataset not found!'})
+
+    try:
+        df = pd.read_csv(dataset_path, parse_dates=['timestamp'])
+    except Exception as e:
+        return render(request, 'electricity_demand_daily.html', {'error': f'Error loading dataset: {str(e)}'})
+
+    selected_date = request.GET.get('date', '2023-01-01')
+
+    if not selected_date:
+        return render(request, 'electricity_demand_daily.html', {'error': 'Please provide a date!'})
+
+    try:
+        selected_date = datetime.strptime(selected_date, "%Y-%m-%d").date()
+    except ValueError:
+        return render(request, 'electricity_demand_daily.html', {'error': 'Invalid date format! Use YYYY-MM-DD.'})
+
+    end_date = selected_date + timedelta(days=30)
+
+    df_30_days = df[(df['timestamp'].dt.date >= selected_date) & (df['timestamp'].dt.date <= end_date)]
+
+    if df_30_days.empty:
+        return render(request, 'electricity_demand_daily.html', {'error': 'No data found for the selected period!'})
+
+    # Filter required columns
+    df_filtered = df_30_days[['timestamp', 'electricity_demand', 'solar_generation']]
+
+    # Plotly graph
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=df_30_days['timestamp'], y=df_30_days['electricity_demand'],
+        mode='lines+markers', name='Electricity Demand',
+        line=dict(color='purple'),
+        marker=dict(size=4)
+    ))
+
+    fig.update_xaxes(
+        tickformat="%b %d",
+        tickangle=45
+    )
+
+    fig.update_layout(
+        title=f"Electricity Demand from {selected_date} to {end_date}",
+        xaxis_title="Date",
+        yaxis_title="Electricity Demand",
+        template="plotly_white",
+        width=1200,
+        height=500
+    )
+
+    graph_html = pio.to_html(fig, full_html=False)
+
+    # Convert Selected Columns to HTML Table
+    df_table_html = df_filtered.to_html(classes="table table-bordered table-striped table-dark", index=False)
+
+    return render(request, 'electricity_demand_daily.html', {
+        'plot_div': graph_html,
+        'selected_date': selected_date,
+        'df_table_html': df_table_html  # Pass the filtered table to the template
+    })
+
+@role_required(allowed_roles=['Admin', 'Government Engineer', 'Normal User', 'Researcher', 'Entrepreneur'])
+def electricity_demand_plot_monthly(request):
+    dataset_path = os.path.join(os.path.dirname(__file__), 'data', 'dummy_electricity_monthly_data.csv')
+
+    if not os.path.exists(dataset_path):
+        return render(request, 'electricity_demand_monthly.html', {'error': 'Dataset not found!'})
+
+    try:
+        df = pd.read_csv(dataset_path, parse_dates=['timestamp'])
+    except Exception as e:
+        return render(request, 'electricity_demand_monthly.html', {'error': f'Error loading dataset: {str(e)}'})
+
+    selected_date = request.GET.get('date', '2023-01-01')
+
+    try:
+        selected_date = datetime.strptime(selected_date, "%Y-%m-%d").date()
+    except ValueError:
+        return render(request, 'electricity_demand_monthly.html', {'error': 'Invalid date format! Use YYYY-MM-DD.'})
+
+    end_date = selected_date + timedelta(days=365)
+
+    df_12_months = df[(df['timestamp'].dt.date >= selected_date) & (df['timestamp'].dt.date <= end_date)]
+
+    if df_12_months.empty:
+        return render(request, 'electricity_demand_monthly.html', {'error': 'No data found for the selected period!'})
+
+    peak_point = df_12_months.loc[df_12_months['electricity_demand'].idxmax()]
+    lowest_point = df_12_months.loc[df_12_months['electricity_demand'].idxmin()]
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=df_12_months['timestamp'], y=df_12_months['electricity_demand'],
+        mode='lines+markers', name='Electricity Demand',
+        line=dict(color='purple'),
+        marker=dict(size=4)
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=[peak_point['timestamp'], lowest_point['timestamp']],
+        y=[peak_point['electricity_demand'], lowest_point['electricity_demand']],
+        mode="markers",
+        marker=dict(color='red', size=10, symbol='circle'),
+        name="Highlighted Points"
+    ))
+
+    fig.add_annotation(
+        x=peak_point['timestamp'], y=peak_point['electricity_demand'],
+        text=f"Peak: {peak_point['electricity_demand']:.2f}",
+        showarrow=True, arrowhead=2, ax=30, ay=-40, bgcolor="yellow"
+    )
+
+    fig.add_annotation(
+        x=lowest_point['timestamp'], y=lowest_point['electricity_demand'],
+        text=f"Lowest: {lowest_point['electricity_demand']:.2f}",
+        showarrow=True, arrowhead=2, ax=-30, ay=40, bgcolor="lightgreen"
+    )
+
+    fig.update_xaxes(
+        tickformat="%b %Y",
+        tickangle=45
+    )
+
+    fig.update_layout(
+        title=f"Electricity Demand from {selected_date} to {end_date}",
+        xaxis_title="Month",
+        yaxis_title="Electricity Demand",
+        template="plotly_white",
+        width=1200,
+        height=500
+    )
+
+    graph_html = pio.to_html(fig, full_html=False)
+
+    # Convert DataFrame to HTML table (only required columns)
+    df_table_html = df_12_months[['timestamp', 'electricity_demand', 'solar_generation']].to_html(classes="table table-striped table-dark", index=False)
+
+    return render(request, 'electricity_demand_monthly.html', {
+        'plot_div': graph_html,
+        'selected_date': selected_date,
+        'df_table_html': df_table_html
+    })
+
+
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'data', 'xgb_regressor.json')
+
+def load_xgboost_model():
+    if not os.path.exists(MODEL_PATH):
+        return None
+
+    model = xgb.XGBRegressor()
+    model.load_model(MODEL_PATH)
+    return model
+
+@role_required(allowed_roles=['Admin', 'Government Engineer'])
+def electricity_demand_prediction(request):
+    dataset_path = os.path.join(os.path.dirname(__file__), 'data', '2025 testset.csv')
+
+    if not os.path.exists(dataset_path):
+        return render(request, 'electricity_demand_prediction.html', {'error': 'Dataset not found!'})
+
+    df = pd.read_csv(dataset_path, parse_dates=['timestamp'])
+
+    # Get the selected date from the form
+    selected_date = request.GET.get('date', None)
+    
+    if not selected_date:  # Default only if no date is provided
+        selected_date = '2025-01-01'
+
+    try:
+        selected_date = datetime.strptime(selected_date, "%Y-%m-%d").date()
+    except ValueError:
+        return render(request, 'electricity_demand_prediction.html', {'error': 'Invalid date format! Use YYYY-MM-DD.'})
+
+    df_day = df[df['timestamp'].dt.date == selected_date]
+
+    if df_day.empty:
+        return render(request, 'electricity_demand_prediction.html', {'error': 'No data found for the selected date!', 'selected_date': selected_date})
+
+    model = load_xgboost_model()
+    if model is None:
+        return render(request, 'electricity_demand_prediction.html', {'error': 'Prediction model not found in myapp/data/!', 'selected_date': selected_date})
+
+    # Extract features
+    df_day['year'] = df_day['timestamp'].dt.year
+    df_day['month'] = df_day['timestamp'].dt.month
+    df_day['hour_of_day'] = df_day['timestamp'].dt.hour
+    df_day['is_weekend'] = df_day['timestamp'].dt.dayofweek >= 5
+
+    features = ['temperature', 'solar_generation', 'is_holiday', 'year', 'month', 'is_weekend']
+
+    if not all(col in df_day.columns for col in features):
+        return render(request, 'electricity_demand_prediction.html', {'error': 'Required features missing in dataset!', 'selected_date': selected_date})
+
+    X_test = df_day[features]
+
+    df_day['predicted_demand'] = model.predict(X_test)
+
+    peak_point = df_day.loc[df_day['predicted_demand'].idxmax()]
+    lowest_point = df_day.loc[df_day['predicted_demand'].idxmin()]
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=df_day['timestamp'], y=df_day['predicted_demand'],
+        mode='lines+markers', name='Predicted Electricity Demand',
+        line=dict(color='purple'),
+        marker=dict(size=4)
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=[peak_point['timestamp'], lowest_point['timestamp']],
+        y=[peak_point['predicted_demand'], lowest_point['predicted_demand']],
+        mode="markers",
+        marker=dict(color='red', size=10, symbol='circle'),
+        name="Highlighted Points"
+    ))
+
+    fig.add_annotation(
+        x=peak_point['timestamp'], y=peak_point['predicted_demand'],
+        text=f"Peak: {peak_point['predicted_demand']:.2f}",
+        showarrow=True, arrowhead=2, ax=30, ay=-40, bgcolor="yellow"
+    )
+
+    fig.add_annotation(
+        x=lowest_point['timestamp'], y=lowest_point['predicted_demand'],
+        text=f"Lowest: {lowest_point['predicted_demand']:.2f}",
+        showarrow=True, arrowhead=2, ax=-30, ay=40, bgcolor="lightgreen"
+    )
+
+    fig.update_xaxes(
+        tickformat="%H:%M",
+        tickangle=45
+    )
+
+    fig.update_layout(
+        title=f"Predicted Electricity Demand for {selected_date}",
+        xaxis_title="Time of Day",
+        yaxis_title="Electricity Demand",
+        template="plotly_white",
+        width=1400,
+        height=600
+    )
+
+    graph_html = pio.to_html(fig, full_html=False)
+
+    # Convert predicted DataFrame to HTML table for display
+    df_day_display = df_day[['timestamp', 'predicted_demand']].to_html(classes="table table-striped text-white", index=False)
+
+    return render(request, 'electricity_demand_prediction.html', {
+        'plot_div': graph_html,
+        'selected_date': selected_date,
+        'predicted_table': df_day_display
+    })

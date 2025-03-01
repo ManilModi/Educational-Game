@@ -31,34 +31,43 @@
     width : auto;
 }
 
-.navbar{
-    width : max(40%, 450px);
-}
-.navbar ul{
+.navbar {
+    width: 100%;
     display: flex;
-    width : 100%;
-    justify-content: space-between;
+    justify-content: center;
 }
-.navbar ul a{
-    text-decoration: none;
-    color : white;
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around; /* Even spacing between items */
+    width: 100%;
+}
+
+.navbar ul li {
+    padding: 10px 15px;
+    margin: 0;
+}
+
+.navbar ul a {
     font-size: 17px;
     font-weight: 600;
+    color: white;
+    padding: 10px 15px; /* More clickable area */
+    transition: 0.3s;
+    text-decoration: none;
 }
+
 .logo h1{
     font-size: 1.6rem;
 }
 .logo h1::before{
-    /* content: "Volt "; */
+
     color : aqua;
 }
 .navbar ul a:hover {
     transition-duration: 0.5s;
     color:  aqua;
 }
-
-
-/* for small devices handling popup menu  */
 
 
 .popup-menu{
@@ -341,4 +350,5 @@ footer {
 }
 .home .homedesc p{
     font-size: 10px;
+   
 }

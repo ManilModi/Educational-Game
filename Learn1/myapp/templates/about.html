@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>Delhi Power Predictions</h1>
+            </div>
+            <nav class="navbar">
+                <ul id="navlist">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    {% if request.session.user_id %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+
+        <section class="about">
+            <div class="maincontent">
+                <h1>About Us</h1>
+                <div class="information">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga possimus commodi voluptatibus dignissimos quod distinctio nisi veritatis aliquam, saepe enim magni officiis ad impedit voluptates odit ratione repellendus! Itaque eaque laboriosam nobis volupta.
+                    </p>
+                    <img src="{% static 'bus_1.png' %}" alt="About Image">
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-text">
+                <div class="footer-img">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <a href="https://www.facebook.com"><img src="{% static 'facebooklogo.jpeg' %}" alt="Facebook" /></a>
+                        <a href="https://www.instagram.com"><img src="{% static 'instagramlogo.jpeg' %}" alt="Instagram" /></a>
+                        <a href="https://www.twitter.com"><img src="{% static 'twitterlogo.jpeg' %}" alt="Twitter" /></a>
+                        <a href="https://www.youtube.com"><img src="{% static 'youtubelogo.jpeg' %}" alt="YouTube" /></a>
+                        <a href="https://www.linkedin.com"><img src="{% static 'linkedin.jpeg' %}" alt="LinkedIn" /></a>
+                    </div>
+                </div>
+
+                <div class="contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="tel:+911234567890">+91 1234567890</a></li>
+                        <li><a href="mailto:abc@gmail.com">abc@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="data">
+                    <h4>Data</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Current Data</a></li>
+                        <li><a href="{% url 'electricity_demand_plot' %}">Predicted Data</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

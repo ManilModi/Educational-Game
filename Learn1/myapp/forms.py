@@ -68,36 +68,18 @@ class AdminUserCreationForm(forms.ModelForm):
             )
 
         return user    
-# class NormalUserForm(forms.Form):
-#     USER_TYPE_CHOICES = [
-#         ('Journlaist', 'Journalist'),
-#         ('Student', 'Student'),
-#     ]
+        return user  
 
-#     username = forms.CharField(label='Username', max_length=50)
-#     password = forms.CharField(label='Password', widget=forms.PasswordInput)
-#     user_type = forms.ChoiceField(label='User Type', choices=USER_TYPE_CHOICES)
+class PasswordChangeForm(forms.Form):
+    username = forms.CharField(
+        max_length=50,
+        label='User Email (Username)',
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+        )
 
-# class EntrepreneurForm(forms.Form):
-#     username = forms.CharField(label='Username', max_length=50)
-#     password = forms.CharField(label='Password', widget=forms.PasswordInput)
-#     company_name = forms.CharField(label='Company Name', max_length=255, required=False)
-
-
-# class GovernmentEngineerForm(forms.Form):
-#     username = forms.CharField(label='Username', max_length=50)
-#     password = forms.CharField(label='Password', widget=forms.PasswordInput)
-#     department = forms.CharField(label='Department', max_length=255, required=False)
-
-
-# class ResearcherForm(forms.Form):
-#     username = forms.CharField(label='Username', max_length=50)
-#     password = forms.CharField(label='Password', widget=forms.PasswordInput)
-#     institution = forms.CharField(label='Institution', max_length=255, required=False)
-
-
-# class AdminForm(forms.Form):
-#     username = forms.CharField(label='Username', max_length=50)
-#     password = forms.CharField(label='Password', widget=forms.PasswordInput)
-
-
+class DeleteUserForm(forms.Form):
+    username = forms.CharField(
+        max_length=50, 
+        label='User Email (Username)', 
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter user email'})
+    )

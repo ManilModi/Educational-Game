@@ -1,13 +1,107 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electricity Demand Graph</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>Electricity Demand Analysis</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
 </head>
-<body>
-    <h1>Electricity Demand Over Time</h1>
-    <div>{{ plot_div|safe }}</div>
+<body class="bg-dark text-white">
+
+    <!-- Navbar Section -->
+    <header class="bg-black py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="text-info">Delhi Power Predictions</h1>
+            <nav class="navbar">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'electricity_demand_plot' %}">Hourly Analysis</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'electricity_demand_plot_daily' %}">Daily Analysis</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'electricity_demand_plot_monthly' %}">Monthly Analysis</a></li>
+                    <li class="nav-item">
+                        {% if request.session.user_role == "Normal User" %}
+                            <a class="nav-link text-white" href="{% url 'normal_dashboard' %}">Dashboard</a>
+                        {% elif request.session.user_role == "Entrepreneur" %}
+                            <a class="nav-link text-white" href="{% url 'entrepreneur_dashboard' %}">Dashboard</a>
+                        {% elif request.session.user_role == "Researcher" %}
+                            <a class="nav-link text-white" href="{% url 'researcher_dashboard' %}">Dashboard</a>
+                        {% elif request.session.user_role == "Government Engineer" %}
+                            <a class="nav-link text-white" href="{% url 'govt_dashboard' %}">Dashboard</a>
+                        {% elif request.session.user_role == "Admin" %}
+                            <a class="nav-link text-white" href="{% url 'admin_dashboard' %}">Dashboard</a>
+                        {% endif %}
+                    </li>
+                    {% if request.session.user_id %}
+                        <li class="nav-item"><a class="nav-link text-danger" href="{% url 'logout' %}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container mt-4">
+        <h2 class="text-info text-center">Electricity Demand - Hourly Analysis</h2>
+
+        <!-- Form Section -->
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-6">
+                <form method="GET" class="card bg-secondary text-white p-3">
+                    <label for="date" class="fw-bold">Choose Date:</label>
+                    <input type="date" id="date" name="date" value="{{ selected_date }}" class="form-control">
+                    <button type="submit" class="btn btn-info text-dark fw-bold mt-3">Show Graph</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        {% if error %}
+            <div class="alert alert-danger text-center fw-bold mt-3">{{ error }}</div>
+        {% else %}
+
+            <!-- Graph Section -->
+            <div class="mt-4 d-flex justify-content-center">
+                {{ plot_div|safe }}
+            </div>
+
+            <!-- Compensation Methods -->
+            {% if compensation_methods %}
+            <div class="container mt-4">
+                <h3 class="text-info">Compensation Methods for {{ selected_date }}</h3>
+                <div class="row">
+                    {% for method in compensation_methods %}
+                        <div class="col-md-4">
+                            <div class="card text-dark bg-light mb-3 shadow-lg">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">{{ method }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% else %}
+                <p class="text-warning text-center mt-3">No compensation methods available for the selected date.</p>
+            {% endif %}
+
+            <!-- Data Table Section -->
+            {% if df_table_html %}
+            <div class="container mt-5">
+                <h3 class="text-info text-center">Electricity Demand Data for {{ selected_date }}</h3>
+                <div class="table-responsive">
+                    {{ df_table_html|safe }}
+                </div>
+            </div>
+            {% endif %}
+
+        {% endif %}
+    </div>
+
 </body>
 </html>

@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 from django.core.mail import send_mail
 from django.conf import settings
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,13 +35,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "myapp",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'myapp',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -138,3 +141,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'annibhaino3@gmail.com'  # Replace with your email
 EMAIL_HOST_PASSWORD = 'fsqgklezxlerubhu'  # Use an App Password if using Gmail
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_AGE = 1200
