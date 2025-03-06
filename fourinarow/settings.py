@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Gemini API settings
+GEMINI_API_KEY = 'your_gemini_api_key'
+GEMINI_API_SECRET = 'your_gemini_api_secret'
+GEMINI_API_BASE_URL = 'https://api.gemini.com/v1'
