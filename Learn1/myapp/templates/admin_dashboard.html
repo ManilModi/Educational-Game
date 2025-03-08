@@ -20,9 +20,10 @@
             <li><a href="about.html" target="_blank">About</a></li>
             <li><a href="{% url 'electricity_demand_plot' %}">Analysis</a></li>
             <li><a href="{% url 'electricity_demand_prediction' %}">Predictions</a></li>
-            <li><a href="{% url 'residential_clusters' %}">Geographical Map</a></li>
+            <li><a href="{% url 'residential_clusters' %}">GeoMap</a></li>
+            <li><a href="{% url 'chatbot_query' %}">AI Assistance</a></li>
             <li><a href="{% url 'admin_create_user' %}"> Give Credentials</a></li>
-            <li><a href="{% url 'update_credential' %}"> Update Credentials</a></li>
+            <li><a href="{% url 'update_upperlevel' %}"> Update Credentials</a></li>
             <li><a href="{% url 'delete_user' %}"> Delete Credentials</a></li>
             {% if request.session.user_id %}
             <li><a href="{% url 'logout' %}">Logout</a></li>

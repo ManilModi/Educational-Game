@@ -1,0 +1,406 @@
+Area: Nirman Vihar, Location: (28.63361, 77.28226), Eat and Drink: 100, Entertainment: 63, Transport: 51, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sunil Medical, Location: (28.6327, 77.28046), Eat and Drink: 100, Entertainment: 71, Transport: 56, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shanti Niketan Apartment, Location: (28.62567, 77.29413), Eat and Drink: 79, Entertainment: 49, Transport: 15, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Puja Apartment, Location: (28.63312, 77.30028), Eat and Drink: 100, Entertainment: 26, Transport: 14, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kanchanjunga Apartments, Location: (28.6379, 77.3008), Eat and Drink: 87, Entertainment: 29, Transport: 5, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gupta Tower, Location: (28.63218, 77.28611), Eat and Drink: 100, Entertainment: 40, Transport: 32, Leisure: 79, Shopping: 100, Services: 100, Facilities: 100.
+Area: Himalya Apartments, Location: (28.63265, 77.30463), Eat and Drink: 100, Entertainment: 27, Transport: 10, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gitanjali Apartment, Location: (28.65064, 77.29976), Eat and Drink: 100, Entertainment: 71, Transport: 19, Leisure: 24, Shopping: 100, Services: 100, Facilities: 100.
+Area: Preet Vihar, Location: (28.6442, 77.29583), Eat and Drink: 100, Entertainment: 65, Transport: 21, Leisure: 31, Shopping: 100, Services: 100, Facilities: 100.
+Area: Prakash Building, Location: (28.63347, 77.28093), Eat and Drink: 100, Entertainment: 59, Transport: 56, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Vihar-Alternate Gate, Location: (28.64537, 77.29729), Eat and Drink: 100, Entertainment: 68, Transport: 16, Leisure: 31, Shopping: 100, Services: 100, Facilities: 100.
+Area: Dda Flats Chitra Vihar, Location: (28.64322, 77.28931), Eat and Drink: 46, Entertainment: 45, Transport: 2, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ranav Complexes, Location: (28.63241, 77.27899), Eat and Drink: 100, Entertainment: 79, Transport: 59, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chaudhary Complex, Location: (28.63575, 77.28588), Eat and Drink: 100, Entertainment: 54, Transport: 45, Leisure: 78, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gourav Society, Location: (28.63375, 77.30567), Eat and Drink: 100, Entertainment: 33, Transport: 13, Leisure: 16, Shopping: 100, Services: 100, Facilities: 100.
+Area: Paradise Apartment, Location: (28.64403, 77.29848), Eat and Drink: 100, Entertainment: 63, Transport: 21, Leisure: 27, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ganesh Nagar, Location: (28.62804, 77.28513), Eat and Drink: 80, Entertainment: 41, Transport: 13, Leisure: 26, Shopping: 100, Services: 100, Facilities: 100.
+Area: Nirman Vihar, Location: (28.64245, 77.28405), Eat and Drink: 80, Entertainment: 56, Transport: 5, Leisure: 21, Shopping: 100, Services: 100, Facilities: 100.
+Area: Al-Latif Tower, Location: (28.64381, 77.27924), Eat and Drink: 93, Entertainment: 53, Transport: 8, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aashirwad, Location: (28.6512, 77.29505), Eat and Drink: 23, Entertainment: 28, Transport: 12, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sanmatiniwas, Location: (28.62831, 77.28351), Eat and Drink: 100, Entertainment: 51, Transport: 21, Leisure: 55, Shopping: 100, Services: 100, Facilities: 100.
+Area: Royal Bakery, Location: (28.62485, 77.29916), Eat and Drink: 79, Entertainment: 38, Transport: 11, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chandar Vihar Gali No. 7, Location: (28.63256, 77.29868), Eat and Drink: 66, Entertainment: 22, Transport: 13, Leisure: 1, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ambedkar Polytechnic Campus, Location: (28.62848, 77.28528), Eat and Drink: 87, Entertainment: 44, Transport: 13, Leisure: 29, Shopping: 100, Services: 100, Facilities: 100.
+Area: Panorma Apartments, Location: (28.63683, 77.28344), Eat and Drink: 100, Entertainment: 55, Transport: 48, Leisure: 99, Shopping: 100, Services: 100, Facilities: 100.
+Area: Tikona Park, Location: (28.636, 77.2832), Eat and Drink: 100, Entertainment: 61, Transport: 52, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: New Rajdhani Enclave-Gate No 1, Location: (28.64135, 77.29466), Eat and Drink: 100, Entertainment: 23, Transport: 27, Leisure: 19, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aakriti Apartment, Location: (28.63334, 77.30527), Eat and Drink: 100, Entertainment: 32, Transport: 10, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Nirman Vihar, Location: (28.63816, 77.28556), Eat and Drink: 100, Entertainment: 52, Transport: 37, Leisure: 52, Shopping: 100, Services: 100, Facilities: 100.
+Area: Natraj Apartment, Location: (28.63408, 77.30245), Eat and Drink: 100, Entertainment: 34, Transport: 13, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Batra Store, Location: (28.62209, 77.29168), Eat and Drink: 50, Entertainment: 28, Transport: 11, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sundriyal Kutir, Location: (28.62507, 77.29768), Eat and Drink: 75, Entertainment: 34, Transport: 14, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Seh Vikas, Location: (28.63391, 77.30132), Eat and Drink: 100, Entertainment: 36, Transport: 13, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Riwaaz Cloth House, Location: (28.63485, 77.27799), Eat and Drink: 100, Entertainment: 77, Transport: 46, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Pariwaa Fashion, Location: (28.63437, 77.27933), Eat and Drink: 100, Entertainment: 62, Transport: 49, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Raj Bhawan, Location: (28.63331, 77.28403), Eat and Drink: 100, Entertainment: 59, Transport: 52, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Iimt College, Location: (28.6479, 77.29737), Eat and Drink: 76, Entertainment: 73, Transport: 14, Leisure: 28, Shopping: 100, Services: 100, Facilities: 100.
+Area: Unesco Apartments, Location: (28.63069, 77.30352), Eat and Drink: 92, Entertainment: 29, Transport: 10, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Society, Location: (28.64498, 77.29609), Eat and Drink: 100, Entertainment: 66, Transport: 19, Leisure: 34, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mohan Niwas, Location: (28.62774, 77.28343), Eat and Drink: 100, Entertainment: 53, Transport: 19, Leisure: 46, Shopping: 100, Services: 100, Facilities: 100.
+Area: Navniti Apartments-Main Gate, Location: (28.62884, 77.30029), Eat and Drink: 74, Entertainment: 37, Transport: 8, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Karkardooma Court Chamber, Location: (28.64781, 77.30015), Eat and Drink: 100, Entertainment: 71, Transport: 17, Leisure: 28, Shopping: 100, Services: 100, Facilities: 100.
+Area: Fancy Beauty Centre, Location: (28.63819, 77.27942), Eat and Drink: 100, Entertainment: 50, Transport: 13, Leisure: 46, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mayfair Apartments, Location: (28.63504, 77.29765), Eat and Drink: 43, Entertainment: 20, Transport: 14, Leisure: 3, Shopping: 100, Services: 100, Facilities: 100.
+Area: Maurya Apartment, Location: (28.63458, 77.30475), Eat and Drink: 100, Entertainment: 33, Transport: 8, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shivam General Store, Location: (28.62218, 77.29167), Eat and Drink: 49, Entertainment: 28, Transport: 11, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Dda Narwana Apartments, Location: (28.63594, 77.29943), Eat and Drink: 92, Entertainment: 29, Transport: 12, Leisure: 3, Shopping: 100, Services: 100, Facilities: 100.
+Area: Saraswati Apartments, Location: (28.63695, 77.3027), Eat and Drink: 93, Entertainment: 30, Transport: 8, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: New Rajdhani Enclave, Location: (28.64192, 77.29594), Eat and Drink: 100, Entertainment: 22, Transport: 28, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shri Ram Jewellers, Location: (28.63701, 77.27792), Eat and Drink: 100, Entertainment: 62, Transport: 16, Leisure: 47, Shopping: 100, Services: 100, Facilities: 100.
+Area: Nav Kranti Apartment, Location: (28.63569, 77.29863), Eat and Drink: 68, Entertainment: 23, Transport: 15, Leisure: 3, Shopping: 100, Services: 100, Facilities: 100.
+Area: Him Varsha Apartments, Location: (28.63063, 77.30171), Eat and Drink: 81, Entertainment: 30, Transport: 11, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Juneja Sales, Location: (28.63564, 77.27909), Eat and Drink: 100, Entertainment: 67, Transport: 34, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sawarkar Apartment, Location: (28.63434, 77.30619), Eat and Drink: 100, Entertainment: 35, Transport: 13, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Hotel Wood Apple, Location: (28.64609, 77.30105), Eat and Drink: 100, Entertainment: 69, Transport: 17, Leisure: 31, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kharbanda Homes 2, Location: (28.63037, 77.29758), Eat and Drink: 84, Entertainment: 35, Transport: 14, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Preet Vihar, Location: (28.62954, 77.28708), Eat and Drink: 63, Entertainment: 45, Transport: 6, Leisure: 22, Shopping: 100, Services: 100, Facilities: 100.
+Area: Pran Nath Niwas, Location: (28.62705, 77.30008), Eat and Drink: 83, Entertainment: 43, Transport: 11, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Narwana Apartments, Location: (28.63513, 77.30248), Eat and Drink: 100, Entertainment: 33, Transport: 11, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: DR. Ambedkar Park Gaurav Apartments, Location: (28.63313, 77.30536), Eat and Drink: 100, Entertainment: 36, Transport: 10, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Lucky Society, Location: (28.62773, 77.29323), Eat and Drink: 71, Entertainment: 37, Transport: 8, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Amrapali Apartment, Location: (28.63191, 77.30417), Eat and Drink: 100, Entertainment: 32, Transport: 8, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sonu General Store, Location: (28.62801, 77.28914), Eat and Drink: 60, Entertainment: 34, Transport: 8, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sushil Store, Location: (28.63823, 77.28442), Eat and Drink: 100, Entertainment: 52, Transport: 38, Leisure: 64, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sadbhawna Apartment, Location: (28.6346, 77.30616), Eat and Drink: 100, Entertainment: 34, Transport: 14, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Happy Home Tower, Location: (28.63131, 77.29518), Eat and Drink: 51, Entertainment: 30, Transport: 11, Leisure: 3, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gautam Niwas, Location: (28.62565, 77.29851), Eat and Drink: 81, Entertainment: 38, Transport: 11, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Neelkanth Apartment, Location: (28.6388, 77.3026), Eat and Drink: 78, Entertainment: 26, Transport: 3, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vikalp Apartment, Location: (28.63651, 77.29968), Eat and Drink: 91, Entertainment: 33, Transport: 12, Leisure: 3, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shiv Shakti Properties, Location: (28.64289, 77.29655), Eat and Drink: 100, Entertainment: 64, Transport: 28, Leisure: 26, Shopping: 100, Services: 100, Facilities: 100.
+Area: Savitri Sadan, Location: (28.63996, 77.29243), Eat and Drink: 100, Entertainment: 31, Transport: 28, Leisure: 18, Shopping: 100, Services: 100, Facilities: 100.
+Area: Jeet Palace, Location: (28.63626, 77.27942), Eat and Drink: 100, Entertainment: 63, Transport: 28, Leisure: 94, Shopping: 100, Services: 100, Facilities: 100.
+Area: Natraj Apartment, Location: (28.63468, 77.30226), Eat and Drink: 100, Entertainment: 32, Transport: 13, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Tikona Park, Location: (28.64737, 77.28698), Eat and Drink: 94, Entertainment: 56, Transport: 5, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: New Style Beauty Palace, Location: (28.64317, 77.29622), Eat and Drink: 100, Entertainment: 63, Transport: 29, Leisure: 28, Shopping: 100, Services: 100, Facilities: 100.
+Area: Swati Apartments, Location: (28.63574, 77.30038), Eat and Drink: 100, Entertainment: 32, Transport: 12, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mittal Niwas, Location: (28.62545, 77.29481), Eat and Drink: 78, Entertainment: 47, Transport: 15, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shubham Apartment, Location: (28.63926, 77.28227), Eat and Drink: 100, Entertainment: 48, Transport: 17, Leisure: 50, Shopping: 100, Services: 100, Facilities: 100.
+Area: Berry Health Care, Location: (28.64282, 77.29332), Eat and Drink: 100, Entertainment: 27, Transport: 25, Leisure: 22, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gurukripa Apartments, Location: (28.63722, 77.28094), Eat and Drink: 100, Entertainment: 50, Transport: 39, Leisure: 96, Shopping: 100, Services: 100, Facilities: 100.
+Area: New Rajdhani Enclave, Location: (28.63385, 77.29159), Eat and Drink: 61, Entertainment: 18, Transport: 4, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Parshav Vihar, Location: (28.63899, 77.30216), Eat and Drink: 77, Entertainment: 26, Transport: 2, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sadbhavna Society, Location: (28.62241, 77.29029), Eat and Drink: 49, Entertainment: 27, Transport: 13, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Jain Sons, Location: (28.64128, 77.29141), Eat and Drink: 100, Entertainment: 41, Transport: 27, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mayurdhawaj Apartment, Location: (28.63185, 77.30266), Eat and Drink: 100, Entertainment: 30, Transport: 12, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Delhi Dhan Sahyog Co Operative Thrift & Credit Society, Location: (28.62654, 77.28891), Eat and Drink: 61, Entertainment: 34, Transport: 10, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Roots Tower, Location: (28.63725, 77.28576), Eat and Drink: 100, Entertainment: 53, Transport: 40, Leisure: 64, Shopping: 100, Services: 100, Facilities: 100.
+Area: Hargobind Enclave A G C R Enclave, Location: (28.6479, 77.29737), Eat and Drink: 76, Entertainment: 73, Transport: 14, Leisure: 28, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kanya Niwas, Location: (28.63379, 77.28376), Eat and Drink: 100, Entertainment: 61, Transport: 56, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Panchmahal Apartment, Location: (28.62994, 77.30342), Eat and Drink: 77, Entertainment: 31, Transport: 6, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shyam Complex, Location: (28.63252, 77.27894), Eat and Drink: 100, Entertainment: 78, Transport: 57, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Friends Apartment, Location: (28.63689, 77.30111), Eat and Drink: 100, Entertainment: 33, Transport: 10, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: Imilan Vihar Apartment, Location: (28.63287, 77.30734), Eat and Drink: 90, Entertainment: 25, Transport: 18, Leisure: 16, Shopping: 100, Services: 100, Facilities: 100.
+Area: Retreat Apartment, Location: (28.63177, 77.30462), Eat and Drink: 96, Entertainment: 30, Transport: 9, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Raj Niwas, Location: (28.62514, 77.29301), Eat and Drink: 78, Entertainment: 45, Transport: 14, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: 84 Har Govind Enclave, Location: (28.64764, 77.29991), Eat and Drink: 100, Entertainment: 70, Transport: 16, Leisure: 28, Shopping: 100, Services: 100, Facilities: 100.
+Area: Nayak Niwas, Location: (28.63152, 77.28391), Eat and Drink: 100, Entertainment: 55, Transport: 44, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Prince Apartments-Main Gate, Location: (28.63081, 77.30036), Eat and Drink: 78, Entertainment: 32, Transport: 14, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Arya Nagar Social, Location: (28.64822, 77.30395), Eat and Drink: 100, Entertainment: 75, Transport: 28, Leisure: 30, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sudarshan Apartment, Location: (28.63116, 77.30128), Eat and Drink: 94, Entertainment: 28, Transport: 15, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Urja Vihar, Location: (28.62745, 77.28659), Eat and Drink: 68, Entertainment: 38, Transport: 11, Leisure: 21, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sharma Complex, Location: (28.62916, 77.29638), Eat and Drink: 69, Entertainment: 36, Transport: 9, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Dr. Shrivastav, Location: (28.6412, 77.29115), Eat and Drink: 96, Entertainment: 40, Transport: 25, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Utha Vihar, Location: (28.62726, 77.28701), Eat and Drink: 61, Entertainment: 35, Transport: 10, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Maitri Apartment, Location: (28.63626, 77.30414), Eat and Drink: 94, Entertainment: 33, Transport: 7, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Bhandari Niwas, Location: (28.6243, 77.29861), Eat and Drink: 70, Entertainment: 36, Transport: 15, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: Charmswood Apartment, Location: (28.62735, 77.29682), Eat and Drink: 75, Entertainment: 42, Transport: 8, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: End Enclave, Location: (28.64246, 77.28153), Eat and Drink: 100, Entertainment: 57, Transport: 7, Leisure: 23, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chabdravihar, Location: (28.63324, 77.2961), Eat and Drink: 45, Entertainment: 21, Transport: 9, Leisure: 2, Shopping: 100, Services: 100, Facilities: 100.
+Area: Associated Apartments, Location: (28.6313, 77.30122), Eat and Drink: 99, Entertainment: 29, Transport: 15, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kamyani Kunj Apartments, Location: (28.6265, 77.28565), Eat and Drink: 78, Entertainment: 36, Transport: 22, Leisure: 22, Shopping: 100, Services: 100, Facilities: 100.
+Area: Parmesh Complex, Location: (28.6494, 77.29989), Eat and Drink: 100, Entertainment: 71, Transport: 16, Leisure: 29, Shopping: 100, Services: 100, Facilities: 100.
+Area: Navniti Apartment, Location: (28.62942, 77.3001), Eat and Drink: 76, Entertainment: 36, Transport: 10, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shri Purvanchal Co-Operative Theft & Credit Society, Location: (28.62516, 77.29327), Eat and Drink: 78, Entertainment: 47, Transport: 13, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Wegmans House, Location: (28.63485, 77.28537), Eat and Drink: 100, Entertainment: 54, Transport: 47, Leisure: 95, Shopping: 100, Services: 100, Facilities: 100.
+Area: Benagl Cloth House, Location: (28.63445, 77.27933), Eat and Drink: 100, Entertainment: 61, Transport: 46, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Milan Vihar Apartment, Location: (28.63487, 77.30403), Eat and Drink: 100, Entertainment: 35, Transport: 9, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chawala Timber, Location: (28.63767, 77.28471), Eat and Drink: 100, Entertainment: 52, Transport: 41, Leisure: 69, Shopping: 100, Services: 100, Facilities: 100.
+Area: Baths Apartment, Location: (28.62774, 77.30412), Eat and Drink: 76, Entertainment: 30, Transport: 10, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vishal Residence, Location: (28.64109, 77.29984), Eat and Drink: 79, Entertainment: 15, Transport: 15, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mayur Vihar, Location: (28.62958, 77.29221), Eat and Drink: 54, Entertainment: 29, Transport: 6, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Madhuban Tower, Location: (28.63553, 77.28591), Eat and Drink: 100, Entertainment: 51, Transport: 46, Leisure: 80, Shopping: 100, Services: 100, Facilities: 100.
+Area: Block E, Location: (28.63328, 77.28175), Eat and Drink: 100, Entertainment: 63, Transport: 52, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ramakrishna Vihar Society, Location: (28.63273, 77.30648), Eat and Drink: 97, Entertainment: 29, Transport: 15, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aditya Tower, Location: (28.63868, 77.28487), Eat and Drink: 100, Entertainment: 52, Transport: 36, Leisure: 49, Shopping: 100, Services: 100, Facilities: 100.
+Area: New Rajdhani Enclave, Location: (28.64192, 77.29547), Eat and Drink: 100, Entertainment: 23, Transport: 28, Leisure: 22, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Homes 2, Location: (28.64458, 77.29807), Eat and Drink: 100, Entertainment: 64, Transport: 20, Leisure: 30, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shiv Apartment, Location: (28.62468, 77.29223), Eat and Drink: 78, Entertainment: 39, Transport: 13, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ideal Palace, Location: (28.65122, 77.29509), Eat and Drink: 21, Entertainment: 28, Transport: 12, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Vihar Gate No 2, Location: (28.64404, 77.29106), Eat and Drink: 94, Entertainment: 52, Transport: 4, Leisure: 18, Shopping: 100, Services: 100, Facilities: 100.
+Area: Jeevan Pragathi Tower, Location: (28.638, 77.28491), Eat and Drink: 100, Entertainment: 54, Transport: 38, Leisure: 60, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chandar Vihar, Location: (28.63356, 77.29843), Eat and Drink: 68, Entertainment: 18, Transport: 13, Leisure: 2, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sonia Vihar, Location: (28.62859, 77.28859), Eat and Drink: 58, Entertainment: 35, Transport: 7, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mangla Apartment, Location: (28.63153, 77.30252), Eat and Drink: 100, Entertainment: 27, Transport: 11, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Hargobind Enclave, Location: (28.64782, 77.3023), Eat and Drink: 100, Entertainment: 73, Transport: 26, Leisure: 28, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kamayani Kunj Apartments, Location: (28.63432, 77.30117), Eat and Drink: 100, Entertainment: 32, Transport: 13, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Harbans Lal Bhola Building, Location: (28.62846, 77.28216), Eat and Drink: 100, Entertainment: 67, Transport: 39, Leisure: 83, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mohan Anchar Palace, Location: (28.6371, 77.27779), Eat and Drink: 100, Entertainment: 61, Transport: 15, Leisure: 41, Shopping: 100, Services: 100, Facilities: 100.
+Area: Preet Vihar, Location: (28.64175, 77.29168), Eat and Drink: 100, Entertainment: 40, Transport: 25, Leisure: 18, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rama Krishna Apartment, Location: (28.63466, 77.29882), Eat and Drink: 82, Entertainment: 19, Transport: 12, Leisure: 2, Shopping: 100, Services: 100, Facilities: 100.
+Area: Radhey Sham Park, Location: (28.64686, 77.28653), Eat and Drink: 63, Entertainment: 59, Transport: 5, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kanchanchanga Apartments, Location: (28.63737, 77.30085), Eat and Drink: 98, Entertainment: 33, Transport: 8, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shankar Savitri, Location: (28.63248, 77.2838), Eat and Drink: 100, Entertainment: 57, Transport: 44, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kakateeya Apartments, Location: (28.63297, 77.30365), Eat and Drink: 100, Entertainment: 32, Transport: 11, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ruma Apartment, Location: (28.64025, 77.29396), Eat and Drink: 100, Entertainment: 25, Transport: 28, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rita Niwas, Location: (28.62437, 77.29382), Eat and Drink: 75, Entertainment: 43, Transport: 18, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Baldev Park, Location: (28.64846, 77.29205), Eat and Drink: 75, Entertainment: 46, Transport: 9, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: Himachlai Mohalla, Location: (28.62743, 77.29059), Eat and Drink: 56, Entertainment: 33, Transport: 5, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Milan Vihar Society, Location: (28.63172, 77.30617), Eat and Drink: 95, Entertainment: 28, Transport: 15, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Roshni Niwas, Location: (28.62405, 77.29726), Eat and Drink: 72, Entertainment: 34, Transport: 17, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: A. G. C. R. Enclave, Location: (28.64905, 77.29805), Eat and Drink: 97, Entertainment: 77, Transport: 15, Leisure: 29, Shopping: 100, Services: 100, Facilities: 100.
+Area: Friends General Store, Location: (28.63595, 77.2791), Eat and Drink: 100, Entertainment: 66, Transport: 30, Leisure: 99, Shopping: 100, Services: 100, Facilities: 100.
+Area: Revanta Welfare Society, Location: (28.64011, 77.29106), Eat and Drink: 100, Entertainment: 36, Transport: 25, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mithila Apartments, Location: (28.63311, 77.29941), Eat and Drink: 95, Entertainment: 20, Transport: 13, Leisure: 3, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shikha Apartments, Location: (28.63146, 77.30232), Eat and Drink: 100, Entertainment: 27, Transport: 12, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Priyadarshini Vihar, Location: (28.64143, 77.27922), Eat and Drink: 100, Entertainment: 63, Transport: 8, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: MCD Primary School Co-Ed Railway Colony Mandawali Delhi, Location: (28.62725, 77.29675), Eat and Drink: 78, Entertainment: 44, Transport: 9, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ram Kisan Apartment, Location: (28.64166, 77.29578), Eat and Drink: 100, Entertainment: 22, Transport: 28, Leisure: 19, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aashirwad Building, Location: (28.63633, 77.28388), Eat and Drink: 100, Entertainment: 60, Transport: 49, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kirpal Apartment, Location: (28.62791, 77.30249), Eat and Drink: 70, Entertainment: 37, Transport: 8, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aldine Centre, Location: (28.64049, 77.29113), Eat and Drink: 91, Entertainment: 36, Transport: 26, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mittal House, Location: (28.62539, 77.29368), Eat and Drink: 77, Entertainment: 45, Transport: 14, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Arvind Kumar Jain & Co. Chartered Accountants, Location: (28.63509, 77.28171), Eat and Drink: 100, Entertainment: 70, Transport: 55, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: P. D. Vihar, Location: (28.64065, 77.28086), Eat and Drink: 100, Entertainment: 52, Transport: 10, Leisure: 31, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vardan Apartments, Location: (28.63096, 77.30023), Eat and Drink: 82, Entertainment: 31, Transport: 15, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vishwakarma Park, Location: (28.63662, 77.28626), Eat and Drink: 100, Entertainment: 50, Transport: 41, Leisure: 56, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aashirwad Apartments, Location: (28.63473, 77.30265), Eat and Drink: 100, Entertainment: 33, Transport: 13, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shri Gurunanak Charitable Society, Location: (28.64216, 77.28249), Eat and Drink: 99, Entertainment: 55, Transport: 8, Leisure: 22, Shopping: 100, Services: 100, Facilities: 100.
+Area: Maheshwari Building, Location: (28.636, 77.28269), Eat and Drink: 100, Entertainment: 65, Transport: 54, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vishal Propbuild, Location: (28.6489, 77.30244), Eat and Drink: 100, Entertainment: 76, Transport: 30, Leisure: 32, Shopping: 100, Services: 100, Facilities: 100.
+Area: Dipali Sarees, Location: (28.63509, 77.27943), Eat and Drink: 100, Entertainment: 61, Transport: 37, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Goverdhan Apartment, Location: (28.63756, 77.28422), Eat and Drink: 100, Entertainment: 47, Transport: 43, Leisure: 74, Shopping: 100, Services: 100, Facilities: 100.
+Area: Bali Niwas, Location: (28.63143, 77.2835), Eat and Drink: 100, Entertainment: 58, Transport: 45, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Balaji Group, Location: (28.64799, 77.3032), Eat and Drink: 100, Entertainment: 74, Transport: 28, Leisure: 30, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vikasdeep Buildingnirman, Location: (28.63853, 77.28705), Eat and Drink: 100, Entertainment: 48, Transport: 36, Leisure: 36, Shopping: 100, Services: 100, Facilities: 100.
+Area: Agcr Enclave, Location: (28.65045, 77.29872), Eat and Drink: 100, Entertainment: 68, Transport: 20, Leisure: 18, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chakarvati General Store, Location: (28.62216, 77.29185), Eat and Drink: 50, Entertainment: 27, Transport: 11, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sidh Vihar, Location: (28.62695, 77.3009), Eat and Drink: 76, Entertainment: 44, Transport: 13, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chitra Vihar-Gate No. 3, Location: (28.641, 77.28615), Eat and Drink: 100, Entertainment: 60, Transport: 16, Leisure: 28, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Vihar, Location: (28.64434, 77.29388), Eat and Drink: 100, Entertainment: 36, Transport: 19, Leisure: 29, Shopping: 100, Services: 100, Facilities: 100.
+Area: New Kamayani Apartments, Location: (28.63429, 77.30414), Eat and Drink: 100, Entertainment: 34, Transport: 10, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sanchar Lok Apartment, Location: (28.63398, 77.30129), Eat and Drink: 100, Entertainment: 37, Transport: 13, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Madhuban Enclave, Location: (28.63163, 77.28813), Eat and Drink: 82, Entertainment: 34, Transport: 11, Leisure: 21, Shopping: 100, Services: 100, Facilities: 100.
+Area: LOTUS Tower, Location: (28.63516, 77.28305), Eat and Drink: 100, Entertainment: 67, Transport: 57, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Urja Vihar Apartments, Location: (28.6269, 77.28667), Eat and Drink: 62, Entertainment: 36, Transport: 12, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Pragatideep Tower, Location: (28.63288, 77.28331), Eat and Drink: 100, Entertainment: 59, Transport: 45, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kanungo Housing Society, Location: (28.62969, 77.30444), Eat and Drink: 84, Entertainment: 32, Transport: 10, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mohan Park, Location: (28.64042, 77.28257), Eat and Drink: 100, Entertainment: 51, Transport: 16, Leisure: 33, Shopping: 100, Services: 100, Facilities: 100.
+Area: Pal Bhawan, Location: (28.62865, 77.28399), Eat and Drink: 100, Entertainment: 49, Transport: 19, Leisure: 52, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kamal Villa, Location: (28.63435, 77.29007), Eat and Drink: 100, Entertainment: 39, Transport: 20, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Park-Ramesh Park, Location: (28.63509, 77.27768), Eat and Drink: 100, Entertainment: 74, Transport: 38, Leisure: 85, Shopping: 100, Services: 100, Facilities: 100.
+Area: Himandri Apartment, Location: (28.63342, 77.28543), Eat and Drink: 100, Entertainment: 51, Transport: 43, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aditi Apartment, Location: (28.63472, 77.30261), Eat and Drink: 100, Entertainment: 33, Transport: 12, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sukh Sagar Apartments, Location: (28.63118, 77.30208), Eat and Drink: 100, Entertainment: 28, Transport: 12, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Vihar CHS, Location: (28.64529, 77.29235), Eat and Drink: 100, Entertainment: 42, Transport: 7, Leisure: 27, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kuchhal Properties, Location: (28.6412, 77.29115), Eat and Drink: 96, Entertainment: 40, Transport: 25, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Dda Building, Location: (28.6368, 77.29063), Eat and Drink: 100, Entertainment: 41, Transport: 22, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Priyadarshini Vihar, Location: (28.64232, 77.28197), Eat and Drink: 100, Entertainment: 54, Transport: 7, Leisure: 21, Shopping: 100, Services: 100, Facilities: 100.
+Area: Narwana Apartment 89, Location: (28.6353, 77.30292), Eat and Drink: 100, Entertainment: 32, Transport: 12, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Silver Park, Location: (28.64678, 77.28623), Eat and Drink: 60, Entertainment: 60, Transport: 4, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Law Apartment, Location: (28.64969, 77.30058), Eat and Drink: 100, Entertainment: 74, Transport: 21, Leisure: 32, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sanskrit Apartment, Location: (28.636, 77.30215), Eat and Drink: 100, Entertainment: 32, Transport: 11, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chawla Park, Location: (28.64667, 77.295), Eat and Drink: 100, Entertainment: 74, Transport: 12, Leisure: 31, Shopping: 100, Services: 100, Facilities: 100.
+Area: Agrasen Niwas, Location: (28.62544, 77.28935), Eat and Drink: 54, Entertainment: 34, Transport: 10, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shukla Villa, Location: (28.62691, 77.29001), Eat and Drink: 59, Entertainment: 37, Transport: 10, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Pragati Deep Building, Location: (28.63789, 77.28566), Eat and Drink: 100, Entertainment: 54, Transport: 38, Leisure: 54, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rahul Enterprises, Location: (28.63737, 77.27942), Eat and Drink: 100, Entertainment: 58, Transport: 18, Leisure: 67, Shopping: 100, Services: 100, Facilities: 100.
+Area: Anand Vihar, Location: (28.63794, 77.30076), Eat and Drink: 85, Entertainment: 30, Transport: 5, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ash Associates, Location: (28.63918, 77.28024), Eat and Drink: 100, Entertainment: 56, Transport: 11, Leisure: 36, Shopping: 100, Services: 100, Facilities: 100.
+Area: Subhavna Niketan, Location: (28.62918, 77.29047), Eat and Drink: 51, Entertainment: 28, Transport: 6, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ekta Apartments, Location: (28.64258, 77.28485), Eat and Drink: 72, Entertainment: 57, Transport: 5, Leisure: 19, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kholsa Khosla Apartment, Location: (28.64392, 77.29225), Eat and Drink: 100, Entertainment: 44, Transport: 21, Leisure: 25, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shanti Mohalla, Location: (28.62557, 77.29546), Eat and Drink: 78, Entertainment: 44, Transport: 15, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mayurdhawaj Society, Location: (28.63261, 77.30229), Eat and Drink: 100, Entertainment: 32, Transport: 14, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Takshshila Apartments-Alternate Gate, Location: (28.63008, 77.30466), Eat and Drink: 82, Entertainment: 30, Transport: 8, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vikas Deep Building, Location: (28.63856, 77.28702), Eat and Drink: 100, Entertainment: 49, Transport: 36, Leisure: 37, Shopping: 100, Services: 100, Facilities: 100.
+Area: Padam House, Location: (28.62921, 77.28019), Eat and Drink: 100, Entertainment: 85, Transport: 59, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Prince Apartments, Location: (28.63063, 77.30032), Eat and Drink: 79, Entertainment: 33, Transport: 13, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Krishna Apartment, Location: (28.63552, 77.28189), Eat and Drink: 100, Entertainment: 67, Transport: 54, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mahavir Enclave, Location: (28.62695, 77.3009), Eat and Drink: 76, Entertainment: 44, Transport: 13, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Raj Sadan, Location: (28.64194, 77.28282), Eat and Drink: 91, Entertainment: 53, Transport: 8, Leisure: 24, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shakarpur Sundar, Location: (28.63059, 77.28406), Eat and Drink: 100, Entertainment: 53, Transport: 36, Leisure: 98, Shopping: 100, Services: 100, Facilities: 100.
+Area: V3s East Centre, Location: (28.63681, 77.2869), Eat and Drink: 100, Entertainment: 45, Transport: 37, Leisure: 47, Shopping: 100, Services: 100, Facilities: 100.
+Area: Top on Tower, Location: (28.63668, 77.28744), Eat and Drink: 100, Entertainment: 46, Transport: 36, Leisure: 39, Shopping: 100, Services: 100, Facilities: 100.
+Area: Jain Apartment, Location: (28.64025, 77.29396), Eat and Drink: 100, Entertainment: 25, Transport: 28, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Dda Park-Chitra Vihar, Location: (28.64108, 77.2853), Eat and Drink: 100, Entertainment: 59, Transport: 15, Leisure: 25, Shopping: 100, Services: 100, Facilities: 100.
+Area: Swastik Apartment, Location: (28.63598, 77.28003), Eat and Drink: 100, Entertainment: 56, Transport: 39, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mangalam Apartment, Location: (28.63688, 77.28005), Eat and Drink: 100, Entertainment: 63, Transport: 34, Leisure: 93, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sadhbhawna, Location: (28.62257, 77.28981), Eat and Drink: 60, Entertainment: 35, Transport: 20, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Bharti Artist's Colony, Location: (28.63806, 77.29039), Eat and Drink: 100, Entertainment: 40, Transport: 26, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: CA Building, Location: (28.63365, 77.28108), Eat and Drink: 100, Entertainment: 62, Transport: 57, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shiv Building, Location: (28.62699, 77.28315), Eat and Drink: 100, Entertainment: 51, Transport: 25, Leisure: 44, Shopping: 100, Services: 100, Facilities: 100.
+Area: Keshav Kunj Building, Location: (28.62468, 77.29678), Eat and Drink: 77, Entertainment: 40, Transport: 17, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sanjay Store, Location: (28.63495, 77.27824), Eat and Drink: 100, Entertainment: 76, Transport: 42, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aashna Motors, Location: (28.64287, 77.29613), Eat and Drink: 100, Entertainment: 20, Transport: 25, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: Yash Homes 3, Location: (28.63349, 77.27924), Eat and Drink: 100, Entertainment: 67, Transport: 53, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shanti Niwas, Location: (28.63972, 77.28015), Eat and Drink: 100, Entertainment: 56, Transport: 11, Leisure: 30, Shopping: 100, Services: 100, Facilities: 100.
+Area: Malbros Tower, Location: (28.63942, 77.29267), Eat and Drink: 100, Entertainment: 32, Transport: 27, Leisure: 18, Shopping: 100, Services: 100, Facilities: 100.
+Area: Laxmi Apartment, Location: (28.63536, 77.28167), Eat and Drink: 100, Entertainment: 70, Transport: 54, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shriram Apartment, Location: (28.62805, 77.28224), Eat and Drink: 100, Entertainment: 65, Transport: 33, Leisure: 74, Shopping: 100, Services: 100, Facilities: 100.
+Area: Nirmal Niwas, Location: (28.6239, 77.29184), Eat and Drink: 67, Entertainment: 33, Transport: 12, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Nirman Vihar, Location: (28.62633, 77.28867), Eat and Drink: 57, Entertainment: 32, Transport: 11, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shanti Apartment, Location: (28.62382, 77.29352), Eat and Drink: 69, Entertainment: 39, Transport: 16, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shri Krishna Building, Location: (28.63145, 77.29378), Eat and Drink: 58, Entertainment: 24, Transport: 8, Leisure: 3, Shopping: 100, Services: 100, Facilities: 100.
+Area: New Surya Kiran Apartments, Location: (28.63426, 77.30404), Eat and Drink: 100, Entertainment: 33, Transport: 12, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aditya Arcade, Location: (28.63825, 77.29492), Eat and Drink: 98, Entertainment: 25, Transport: 27, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: G R Buildwell Site 4, Location: (28.63476, 77.28476), Eat and Drink: 100, Entertainment: 51, Transport: 49, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mery General Store, Location: (28.62216, 77.29187), Eat and Drink: 50, Entertainment: 27, Transport: 11, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sukh Vihar-Main Gate, Location: (28.64575, 77.28914), Eat and Drink: 75, Entertainment: 52, Transport: 1, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: Preet Vihar, Location: (28.63683, 77.29937), Eat and Drink: 80, Entertainment: 33, Transport: 14, Leisure: 4, Shopping: 100, Services: 100, Facilities: 100.
+Area: Baptist Convent Senior Secondary School, Location: (28.62921, 77.30466), Eat and Drink: 79, Entertainment: 30, Transport: 9, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sahyadri Apartment, Location: (28.63349, 77.29978), Eat and Drink: 100, Entertainment: 23, Transport: 14, Leisure: 4, Shopping: 100, Services: 100, Facilities: 100.
+Area: Neethi Apartments, Location: (28.63129, 77.30177), Eat and Drink: 100, Entertainment: 28, Transport: 13, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chandu Park, Location: (28.6468, 77.29015), Eat and Drink: 79, Entertainment: 60, Transport: 3, Leisure: 22, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vidhyut Apartment, Location: (28.63738, 77.30086), Eat and Drink: 98, Entertainment: 33, Transport: 8, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Neelkanth Homes, Location: (28.64802, 77.28749), Eat and Drink: 99, Entertainment: 59, Transport: 7, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Takshila Apartment, Location: (28.62973, 77.30527), Eat and Drink: 72, Entertainment: 28, Transport: 9, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shri Sai Kamal Properties, Location: (28.638, 77.2827), Eat and Drink: 100, Entertainment: 48, Transport: 46, Leisure: 79, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sudhir Jain Apartment, Location: (28.63118, 77.30608), Eat and Drink: 79, Entertainment: 24, Transport: 10, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kanungo Apartments, Location: (28.63131, 77.30615), Eat and Drink: 82, Entertainment: 25, Transport: 13, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Preet Vihar, Location: (28.64759, 77.28673), Eat and Drink: 78, Entertainment: 54, Transport: 5, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Parshav Vihar, Location: (28.63367, 77.30781), Eat and Drink: 87, Entertainment: 26, Transport: 17, Leisure: 16, Shopping: 100, Services: 100, Facilities: 100.
+Area: Radhika Niwas, Location: (28.62857, 77.2851), Eat and Drink: 97, Entertainment: 42, Transport: 12, Leisure: 34, Shopping: 100, Services: 100, Facilities: 100.
+Area: Chadha Niwas, Location: (28.63129, 77.28353), Eat and Drink: 100, Entertainment: 58, Transport: 44, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Maruti Apartment, Location: (28.6228, 77.291), Eat and Drink: 53, Entertainment: 32, Transport: 10, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Karkaduma Village, Location: (28.64833, 77.30384), Eat and Drink: 100, Entertainment: 76, Transport: 28, Leisure: 32, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gupta Provision Store, Location: (28.63491, 77.27799), Eat and Drink: 100, Entertainment: 77, Transport: 45, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Laxmi Apartments, Location: (28.64194, 77.2826), Eat and Drink: 98, Entertainment: 52, Transport: 8, Leisure: 24, Shopping: 100, Services: 100, Facilities: 100.
+Area: LGF Rishabh Tower, Location: (28.64802, 77.30246), Eat and Drink: 100, Entertainment: 74, Transport: 27, Leisure: 30, Shopping: 100, Services: 100, Facilities: 100.
+Area: East Baldev Park, Location: (28.6481, 77.28981), Eat and Drink: 98, Entertainment: 63, Transport: 8, Leisure: 19, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shakarpur Nirman Vihar, Location: (28.62983, 77.2855), Eat and Drink: 100, Entertainment: 47, Transport: 11, Leisure: 52, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Vihar-Main Gate, Location: (28.64642, 77.29512), Eat and Drink: 100, Entertainment: 70, Transport: 11, Leisure: 32, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rwa Preet Vihar Block B, Location: (28.63563, 77.29198), Eat and Drink: 92, Entertainment: 27, Transport: 13, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Nisc Education, Location: (28.62658, 77.29895), Eat and Drink: 78, Entertainment: 43, Transport: 10, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shankar Vihar Prachin Hanuman Mandir, Location: (28.63876, 77.2878), Eat and Drink: 100, Entertainment: 48, Transport: 27, Leisure: 36, Shopping: 100, Services: 100, Facilities: 100.
+Area: South Dheeraj, Location: (28.62619, 77.28514), Eat and Drink: 81, Entertainment: 40, Transport: 24, Leisure: 21, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rajdhani Nikunj Apartment Patparganj, Location: (28.63448, 77.3017), Eat and Drink: 100, Entertainment: 30, Transport: 13, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Manita Niwas, Location: (28.63029, 77.2828), Eat and Drink: 100, Entertainment: 68, Transport: 46, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Patparganj, Location: (28.63201, 77.30261), Eat and Drink: 100, Entertainment: 31, Transport: 12, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Preet Vihar, Location: (28.6339, 77.29022), Eat and Drink: 100, Entertainment: 33, Transport: 16, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Deepti Store, Location: (28.64119, 77.29115), Eat and Drink: 96, Entertainment: 40, Transport: 25, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Millan Vihar, Location: (28.63269, 77.30741), Eat and Drink: 84, Entertainment: 23, Transport: 18, Leisure: 16, Shopping: 100, Services: 100, Facilities: 100.
+Area: Morya Cloth House, Location: (28.63613, 77.2791), Eat and Drink: 100, Entertainment: 63, Transport: 29, Leisure: 91, Shopping: 100, Services: 100, Facilities: 100.
+Area: Hargobind Enclave Gate No 2, Location: (28.64794, 77.30205), Eat and Drink: 100, Entertainment: 73, Transport: 27, Leisure: 29, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rama Krishna Apartment, Location: (28.63419, 77.29852), Eat and Drink: 73, Entertainment: 14, Transport: 12, Leisure: 2, Shopping: 100, Services: 100, Facilities: 100.
+Area: Maitry Apr Ents, Location: (28.63255, 77.29867), Eat and Drink: 66, Entertainment: 22, Transport: 13, Leisure: 1, Shopping: 100, Services: 100, Facilities: 100.
+Area: Prashant Apartments, Location: (28.64308, 77.28381), Eat and Drink: 91, Entertainment: 64, Transport: 4, Leisure: 21, Shopping: 100, Services: 100, Facilities: 100.
+Area: The Navodit Co-Operative Urban Thrift & Credit Society, Location: (28.64929, 77.28973), Eat and Drink: 100, Entertainment: 66, Transport: 12, Leisure: 18, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vahis Fast Food, Location: (28.64128, 77.29141), Eat and Drink: 100, Entertainment: 41, Transport: 27, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Saraswati Kunj Apartment, Location: (28.62972, 77.30407), Eat and Drink: 88, Entertainment: 32, Transport: 9, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Meena Apartments, Location: (28.6335, 77.30033), Eat and Drink: 100, Entertainment: 29, Transport: 14, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Goyal Bhawan, Location: (28.63719, 77.28276), Eat and Drink: 100, Entertainment: 47, Transport: 49, Leisure: 96, Shopping: 100, Services: 100, Facilities: 100.
+Area: Minarchitra Vihar, Location: (28.6425, 77.28689), Eat and Drink: 63, Entertainment: 53, Transport: 3, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sukh Vihar-Gate No. 2, Location: (28.64665, 77.28813), Eat and Drink: 78, Entertainment: 55, Transport: 4, Leisure: 19, Shopping: 100, Services: 100, Facilities: 100.
+Area: Laxmi Deep Building, Location: (28.63768, 77.28574), Eat and Drink: 100, Entertainment: 55, Transport: 38, Leisure: 53, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shah STD Shop, Location: (28.64095, 77.29105), Eat and Drink: 92, Entertainment: 40, Transport: 25, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Karishma Apartment, Location: (28.62782, 77.30277), Eat and Drink: 74, Entertainment: 36, Transport: 7, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Durga Apartments, Location: (28.64158, 77.28372), Eat and Drink: 75, Entertainment: 52, Transport: 11, Leisure: 24, Shopping: 100, Services: 100, Facilities: 100.
+Area: Laxmi Nagar, Location: (28.63239, 77.28), Eat and Drink: 100, Entertainment: 76, Transport: 54, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mahalaxmi Apartment, Location: (28.63746, 77.27971), Eat and Drink: 100, Entertainment: 59, Transport: 20, Leisure: 68, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gouri Shanker Builder Site 2, Location: (28.63293, 77.28005), Eat and Drink: 100, Entertainment: 73, Transport: 54, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Vihar, Location: (28.6445, 77.29286), Eat and Drink: 100, Entertainment: 39, Transport: 13, Leisure: 26, Shopping: 100, Services: 100, Facilities: 100.
+Area: Associated Apartment D Block, Location: (28.63184, 77.30151), Eat and Drink: 100, Entertainment: 27, Transport: 15, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Anarkali Garden, Location: (28.64949, 77.29231), Eat and Drink: 83, Entertainment: 46, Transport: 12, Leisure: 22, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rajdhani Enclave, Location: (28.64139, 77.2948), Eat and Drink: 100, Entertainment: 23, Transport: 27, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: Maitri Apartments, Location: (28.63202, 77.29862), Eat and Drink: 66, Entertainment: 22, Transport: 12, Leisure: 3, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mandawali Gayatri Niwas, Location: (28.6267, 77.29189), Eat and Drink: 71, Entertainment: 36, Transport: 9, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rajdhani Nikunj Society, Location: (28.63522, 77.30107), Eat and Drink: 100, Entertainment: 31, Transport: 12, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Preet Vihar, Location: (28.64763, 77.2922), Eat and Drink: 65, Entertainment: 46, Transport: 7, Leisure: 24, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ganpati House, Location: (28.63341, 77.28398), Eat and Drink: 100, Entertainment: 60, Transport: 53, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Saibaba Charitable Society, Location: (28.64327, 77.28246), Eat and Drink: 100, Entertainment: 55, Transport: 4, Leisure: 19, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sai Apartment, Location: (28.62877, 77.28389), Eat and Drink: 100, Entertainment: 50, Transport: 21, Leisure: 60, Shopping: 100, Services: 100, Facilities: 100.
+Area: Delhi Rajdhani Apartments, Location: (28.63087, 77.30027), Eat and Drink: 82, Entertainment: 31, Transport: 15, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Barat Ghar, Location: (28.6229, 77.29295), Eat and Drink: 55, Entertainment: 34, Transport: 11, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Maduban Colony, Location: (28.62982, 77.28614), Eat and Drink: 88, Entertainment: 45, Transport: 9, Leisure: 35, Shopping: 100, Services: 100, Facilities: 100.
+Area: Pharma Apartment, Location: (28.63395, 77.30051), Eat and Drink: 100, Entertainment: 29, Transport: 14, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shri Ganesh Apartments, Location: (28.63397, 77.30501), Eat and Drink: 100, Entertainment: 33, Transport: 10, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vandana Apartments, Location: (28.63195, 77.30431), Eat and Drink: 100, Entertainment: 30, Transport: 9, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Krishna Estates, Location: (28.64232, 77.29598), Eat and Drink: 100, Entertainment: 22, Transport: 27, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: Brindavanam Service Apartment, Location: (28.63483, 77.28202), Eat and Drink: 100, Entertainment: 67, Transport: 56, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Vihar the Aviation Employees CGHS, Location: (28.6459, 77.29644), Eat and Drink: 100, Entertainment: 69, Transport: 13, Leisure: 34, Shopping: 100, Services: 100, Facilities: 100.
+Area: T. K. Agencies, Location: (28.639, 77.28055), Eat and Drink: 100, Entertainment: 53, Transport: 16, Leisure: 42, Shopping: 100, Services: 100, Facilities: 100.
+Area: Hargobind Enclave Gate No 1, Location: (28.64639, 77.30143), Eat and Drink: 100, Entertainment: 69, Transport: 21, Leisure: 29, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rama's, Location: (28.64145, 77.28299), Eat and Drink: 91, Entertainment: 47, Transport: 12, Leisure: 25, Shopping: 100, Services: 100, Facilities: 100.
+Area: Goyal Shop, Location: (28.6412, 77.29115), Eat and Drink: 96, Entertainment: 40, Transport: 25, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Perfect Man Parlour, Location: (28.63701, 77.27792), Eat and Drink: 100, Entertainment: 62, Transport: 16, Leisure: 47, Shopping: 100, Services: 100, Facilities: 100.
+Area: Al Latif Building, Location: (28.64377, 77.27924), Eat and Drink: 94, Entertainment: 55, Transport: 8, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Priyadarshini East End Enclave, Location: (28.64177, 77.28107), Eat and Drink: 100, Entertainment: 49, Transport: 8, Leisure: 21, Shopping: 100, Services: 100, Facilities: 100.
+Area: Bhati Niwas, Location: (28.63297, 77.2856), Eat and Drink: 100, Entertainment: 52, Transport: 43, Leisure: 98, Shopping: 100, Services: 100, Facilities: 100.
+Area: Raj Niwas, Location: (28.62819, 77.28287), Eat and Drink: 100, Entertainment: 59, Transport: 28, Leisure: 65, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mithala Transport, Location: (28.63789, 77.28463), Eat and Drink: 100, Entertainment: 53, Transport: 42, Leisure: 66, Shopping: 100, Services: 100, Facilities: 100.
+Area: Swasthya Vihar Apartments, Location: (28.63982, 77.2887), Eat and Drink: 100, Entertainment: 44, Transport: 21, Leisure: 26, Shopping: 100, Services: 100, Facilities: 100.
+Area: Lakhi Society, Location: (28.62701, 77.29335), Eat and Drink: 80, Entertainment: 42, Transport: 8, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: White House, Location: (28.6256, 77.30211), Eat and Drink: 57, Entertainment: 43, Transport: 13, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: Dayal Sons, Location: (28.6348, 77.27908), Eat and Drink: 100, Entertainment: 63, Transport: 42, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Jeet Electricals, Location: (28.63875, 77.27915), Eat and Drink: 100, Entertainment: 48, Transport: 12, Leisure: 35, Shopping: 100, Services: 100, Facilities: 100.
+Area: VRC Campus, Location: (28.6461, 77.30186), Eat and Drink: 100, Entertainment: 69, Transport: 21, Leisure: 27, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gaurav Apartment, Location: (28.63362, 77.30525), Eat and Drink: 100, Entertainment: 33, Transport: 10, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Puja Apartment, Location: (28.6331, 77.29998), Eat and Drink: 100, Entertainment: 23, Transport: 14, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vaibhav House, Location: (28.62469, 77.29854), Eat and Drink: 74, Entertainment: 35, Transport: 13, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: Choudhary Bhagwat Pehalwan Building, Location: (28.62926, 77.29708), Eat and Drink: 78, Entertainment: 39, Transport: 9, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sukh Vihar-Gate No. 1, Location: (28.64675, 77.2882), Eat and Drink: 81, Entertainment: 56, Transport: 5, Leisure: 19, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rama Krishna Vihar Apartment, Location: (28.63592, 77.29892), Eat and Drink: 81, Entertainment: 25, Transport: 15, Leisure: 3, Shopping: 100, Services: 100, Facilities: 100.
+Area: SRS Homes, Location: (28.63708, 77.27897), Eat and Drink: 100, Entertainment: 56, Transport: 18, Leisure: 60, Shopping: 100, Services: 100, Facilities: 100.
+Area: Trilok Apartments, Location: (28.63773, 77.30135), Eat and Drink: 91, Entertainment: 30, Transport: 5, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gupta Furniture, Location: (28.63599, 77.27942), Eat and Drink: 100, Entertainment: 65, Transport: 30, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Anamika Apartments, Location: (28.63742, 77.30233), Eat and Drink: 91, Entertainment: 28, Transport: 6, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shri Ram Shop, Location: (28.64293, 77.29607), Eat and Drink: 100, Entertainment: 20, Transport: 25, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ukh Vihar, Location: (28.64304, 77.28581), Eat and Drink: 69, Entertainment: 54, Transport: 2, Leisure: 19, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sai Ram Education & Welfare Society, Location: (28.63281, 77.28105), Eat and Drink: 100, Entertainment: 64, Transport: 55, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: D. K. Enterprises, Location: (28.63551, 77.27909), Eat and Drink: 100, Entertainment: 69, Transport: 35, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Adharshila Apartment, Location: (28.62919, 77.2972), Eat and Drink: 77, Entertainment: 43, Transport: 10, Leisure: 7, Shopping: 100, Services: 100, Facilities: 100.
+Area: Taxico Travel Service, Location: (28.6412, 77.29115), Eat and Drink: 96, Entertainment: 40, Transport: 25, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Bses Yamuna Power, Location: (28.6268, 77.28716), Eat and Drink: 60, Entertainment: 36, Transport: 11, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Telephone Kendra Agcr Enclave, Location: (28.65089, 77.29595), Eat and Drink: 18, Entertainment: 24, Transport: 10, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sa Noria Associates, Location: (28.62863, 77.28277), Eat and Drink: 100, Entertainment: 65, Transport: 29, Leisure: 76, Shopping: 100, Services: 100, Facilities: 100.
+Area: Nirman Vihar, Location: (28.63683, 77.28269), Eat and Drink: 100, Entertainment: 49, Transport: 51, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Swast House, Location: (28.64007, 77.29315), Eat and Drink: 100, Entertainment: 27, Transport: 27, Leisure: 18, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vidisha Apartment, Location: (28.63688, 77.29933), Eat and Drink: 78, Entertainment: 33, Transport: 14, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Bhogk Complex, Location: (28.63586, 77.28577), Eat and Drink: 100, Entertainment: 54, Transport: 44, Leisure: 79, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sadbhawana Apartment, Location: (28.62258, 77.28985), Eat and Drink: 60, Entertainment: 35, Transport: 20, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rinku Building, Location: (28.64683, 77.2826), Eat and Drink: 100, Entertainment: 70, Transport: 5, Leisure: 11, Shopping: 100, Services: 100, Facilities: 100.
+Area: A G C R Enclave, Location: (28.64668, 77.3003), Eat and Drink: 100, Entertainment: 70, Transport: 17, Leisure: 29, Shopping: 100, Services: 100, Facilities: 100.
+Area: Panchal Vihar, Location: (28.64004, 77.28304), Eat and Drink: 100, Entertainment: 57, Transport: 19, Leisure: 39, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kottakkal Ayurvedic Hospital & Research Centre, Location: (28.6479, 77.29737), Eat and Drink: 76, Entertainment: 73, Transport: 14, Leisure: 28, Shopping: 100, Services: 100, Facilities: 100.
+Area: Jai Apartment, Location: (28.63487, 77.30402), Eat and Drink: 100, Entertainment: 35, Transport: 9, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gautam Niwas, Location: (28.62274, 77.29315), Eat and Drink: 55, Entertainment: 33, Transport: 13, Leisure: 5, Shopping: 100, Services: 100, Facilities: 100.
+Area: Uttaranchal Bhawan, Location: (28.62721, 77.29984), Eat and Drink: 80, Entertainment: 43, Transport: 10, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sai Bhawan Building, Location: (28.63215, 77.27914), Eat and Drink: 100, Entertainment: 86, Transport: 59, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Vidhuat Apartments, Location: (28.63677, 77.30064), Eat and Drink: 97, Entertainment: 31, Transport: 10, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: Jarat Vihar, Location: (28.64338, 77.28802), Eat and Drink: 44, Entertainment: 51, Transport: 0, Leisure: 18, Shopping: 100, Services: 100, Facilities: 100.
+Area: Unesco Apartments, Location: (28.63195, 77.30431), Eat and Drink: 100, Entertainment: 30, Transport: 9, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Padma Niwas, Location: (28.62984, 77.28405), Eat and Drink: 100, Entertainment: 53, Transport: 24, Leisure: 79, Shopping: 100, Services: 100, Facilities: 100.
+Area: Mayur Dhwaj Apartment, Location: (28.63264, 77.30242), Eat and Drink: 100, Entertainment: 32, Transport: 12, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: V. R. C. Building, Location: (28.64502, 77.30357), Eat and Drink: 100, Entertainment: 65, Transport: 18, Leisure: 22, Shopping: 100, Services: 100, Facilities: 100.
+Area: Classic House, Location: (28.63076, 77.28402), Eat and Drink: 100, Entertainment: 53, Transport: 40, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Takshshila Apartment-Main Gate, Location: (28.62852, 77.30474), Eat and Drink: 73, Entertainment: 32, Transport: 11, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Hargovind Enclave Bus Stop, Location: (28.64582, 77.3007), Eat and Drink: 100, Entertainment: 68, Transport: 16, Leisure: 28, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gyan Kunj, Location: (28.64032, 77.27918), Eat and Drink: 100, Entertainment: 56, Transport: 10, Leisure: 26, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ramshri Niwas, Location: (28.62622, 77.30259), Eat and Drink: 58, Entertainment: 37, Transport: 13, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Park End Colony, Location: (28.64306, 77.29687), Eat and Drink: 100, Entertainment: 65, Transport: 29, Leisure: 25, Shopping: 100, Services: 100, Facilities: 100.
+Area: Shivani Apartment, Location: (28.63362, 77.30524), Eat and Drink: 100, Entertainment: 33, Transport: 10, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: Metro Apartment, Location: (28.63097, 77.30086), Eat and Drink: 76, Entertainment: 30, Transport: 15, Leisure: 10, Shopping: 100, Services: 100, Facilities: 100.
+Area: Bali House, Location: (28.63337, 77.28485), Eat and Drink: 100, Entertainment: 55, Transport: 48, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rwa Preet Vihar Block A, Location: (28.63408, 77.28999), Eat and Drink: 100, Entertainment: 35, Transport: 18, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gagan Vihar, Location: (28.64665, 77.2899), Eat and Drink: 80, Entertainment: 60, Transport: 2, Leisure: 22, Shopping: 100, Services: 100, Facilities: 100.
+Area: Corenthum Building, Location: (28.62774, 77.29749), Eat and Drink: 81, Entertainment: 39, Transport: 8, Leisure: 8, Shopping: 100, Services: 100, Facilities: 100.
+Area: Residents Welfare Association, Location: (28.65115, 77.28844), Eat and Drink: 92, Entertainment: 49, Transport: 14, Leisure: 15, Shopping: 100, Services: 100, Facilities: 100.
+Area: Aruna Park, Location: (28.63496, 77.28194), Eat and Drink: 100, Entertainment: 66, Transport: 55, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Gupta Niwas, Location: (28.62468, 77.29678), Eat and Drink: 77, Entertainment: 40, Transport: 17, Leisure: 9, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ansal Vikas Deep Building, Location: (28.63825, 77.2876), Eat and Drink: 100, Entertainment: 47, Transport: 37, Leisure: 34, Shopping: 100, Services: 100, Facilities: 100.
+Area: Maurya Co-Operative Group Housing Society, Location: (28.63473, 77.30468), Eat and Drink: 100, Entertainment: 33, Transport: 8, Leisure: 13, Shopping: 100, Services: 100, Facilities: 100.
+Area: Rishabh Corporate Tower, Location: (28.64842, 77.30203), Eat and Drink: 100, Entertainment: 74, Transport: 27, Leisure: 32, Shopping: 100, Services: 100, Facilities: 100.
+Area: Madhu Vihar, Location: (28.63544, 77.30235), Eat and Drink: 100, Entertainment: 33, Transport: 11, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Pirendana Complex, Location: (28.63334, 77.27936), Eat and Drink: 100, Entertainment: 67, Transport: 53, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+Area: Toshi House, Location: (28.62985, 77.28521), Eat and Drink: 100, Entertainment: 49, Transport: 14, Leisure: 62, Shopping: 100, Services: 100, Facilities: 100.
+Area: Kakateeya Apartment-Alternate Gate, Location: (28.6321, 77.30422), Eat and Drink: 100, Entertainment: 33, Transport: 9, Leisure: 14, Shopping: 100, Services: 100, Facilities: 100.
+Area: MK Sikka House, Location: (28.63453, 77.28564), Eat and Drink: 100, Entertainment: 50, Transport: 47, Leisure: 96, Shopping: 100, Services: 100, Facilities: 100.
+Area: Sonalika International, Location: (28.64802, 77.30246), Eat and Drink: 100, Entertainment: 74, Transport: 27, Leisure: 30, Shopping: 100, Services: 100, Facilities: 100.
+Area: Trang Apartment, Location: (28.62492, 77.29257), Eat and Drink: 77, Entertainment: 45, Transport: 13, Leisure: 6, Shopping: 100, Services: 100, Facilities: 100.
+Area: Nagpal Apartments, Location: (28.64795, 77.29137), Eat and Drink: 81, Entertainment: 53, Transport: 9, Leisure: 20, Shopping: 100, Services: 100, Facilities: 100.
+Area: JD Cambridge Building, Location: (28.62544, 77.29884), Eat and Drink: 82, Entertainment: 36, Transport: 11, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Anjali New Brijpuri, Location: (28.64477, 77.2824), Eat and Drink: 92, Entertainment: 62, Transport: 4, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
+Area: Ankur Residency, Location: (28.63628, 77.3041), Eat and Drink: 94, Entertainment: 33, Transport: 7, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
+Area: Hira Wool House, Location: (28.63607, 77.27942), Eat and Drink: 100, Entertainment: 64, Transport: 30, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
+

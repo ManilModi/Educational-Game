@@ -19,8 +19,11 @@ path('researcher_dashboard/', views.researcher_dashboard, name='researcher_dashb
 path('createroles/', views.creatRroles, name='create_roles'),
 path('admin_create_user/', views.admin_create_user, name='admin_create_user'), 
 path('unauthorized/', views.unauthorized_access, name='unauthorized_access'),
-path('update_credential/', views.update_credential, name='update_credential'),
+path('update_credentials/', views.update_credentials, name='update_credentials'),
+path('update_upperlevel/', views.update_upperlevel, name='update_upperlevel'),
 path('delete_user/', views.delete_user, name='delete_user'),
 path('electricity_demand_plot_daily/', views.electricity_demand_plot_daily, name='electricity_demand_plot_daily'),
 path('electricity_demand_plot_monthly/', views.electricity_demand_plot_monthly, name='electricity_demand_plot_monthly'),
+path("chatbot/", views.chatbot_ui, name="chatbot_ui"),
+path("query/", views.chatbot_view, name="chatbot_query"),
 ]

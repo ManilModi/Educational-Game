@@ -24,6 +24,8 @@
                     <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="{% url 'electricity_demand_plot' %}">Analysis</a></li>
                     <li><a href="{% url 'residential_clusters' %}">Geographical Map</a></li>
+                    <li><a href="{% url 'chatbot_query' %}">AI Assistance</a></li>
+                    <li><a href="{% url 'update_credentials' %}">Update Credentials</a></li>
                     {% if request.session.user_id %}
                     <li><a href="{% url 'logout' %}">Logout</a></li>
                     {% endif %}
@@ -47,7 +49,7 @@
                 </nav>
               </header>
         
-              <!-- Home Page Section -->
+
               <section class="home-page">
                 <div class="view">
                   <video src="{% static 'delhi.mp4' %}" autoplay muted loop>
@@ -69,7 +71,7 @@
                 </div>
               </section>
         
-              <!-- Footer Section -->
+
               <footer>
                 <div class="footer-text">
                   <div class="footer-img">

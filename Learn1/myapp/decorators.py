@@ -4,7 +4,7 @@ from django.http import HttpResponse
 def role_required(allowed_roles=[]):
     def decorator(view_func):
         def wrapper_func(request, *args, **kwargs):
-            user_role = request.session.get('user_role')  # Get role from session
+            user_role = request.session.get('user_role')
 
             if user_role in allowed_roles:
                 return view_func(request, *args, **kwargs)

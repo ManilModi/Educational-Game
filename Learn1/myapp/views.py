@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import (get_object_or_404, render, HttpResponseRedirect)
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth import login, logout
 from django.contrib.auth import login, logout,authenticate
 from django.contrib import messages
 from .forms import LoginForm, UserRegistrationForm,AdminUserCreationForm
-from .forms import LoginForm, UserRegistrationForm,AdminUserCreationForm,PasswordChangeForm, DeleteUserForm
+from .forms import LoginForm, UserRegistrationForm,AdminUserCreationForm,PasswordChangeForm, DeleteCredentialForm, NormalUserCredentialUpdateForm
 from .forms import PasswordChangeForm, generate_random_password
 from django.core.mail import send_mail
 from .models import Userstable, Roles,UserRole
@@ -24,17 +24,24 @@ import plotly.graph_objects as go
 import plotly.io as pio
 from datetime import datetime, timedelta
 import xgboost as xgb
+import groq
+from django.views.decorators.csrf import csrf_exempt
+import faiss
+from sentence_transformers import SentenceTransformer
+import groq
+
 
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
+        request.session.flush()
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
 
             try:
                 user = Userstable.objects.get(username=username)
-
+                
                 if user.password == password:  # (Consider hashing passwords)
                     # Fetch the user's role
                     user_role = UserRole.objects.get(user=user)
@@ -44,13 +51,17 @@ def user_login(request):
                     request.session['user_id'] = user.id
                     request.session['user_role'] = role_name
 
-
+                    # Redirect based on role
                     if role_name == "Admin":
                         return redirect('admin_dashboard')
                     elif role_name == "Government Engineer":
                         return redirect('govt_dashboard')
                     elif role_name == "Normal User":
                         return redirect('normal_dashboard')
+                    elif role_name == "Entrepreneur":
+                        return redirect('entrepreneur_dashboard')
+                    elif role_name == "Researcher":
+                        return redirect('researcher_dashboard')
                 else:
                     messages.error(request, "Invalid credentials")
             except Userstable.DoesNotExist:
@@ -66,9 +77,6 @@ def user_login(request):
 def user_logout(request):
     request.session.flush()  # Clear session
     return redirect('login')
-
-def about(request):
-    return render(request, 'about.html') 
 
 # Dashboard Views
 @role_required(allowed_roles=['Admin'])
@@ -127,7 +135,8 @@ def admin_create_user(request):
         form = AdminUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            # messages.success(request, "Admin/Govt. Engineer account created! Credentials sent via email.")
+
+            messages.success(request, "Admin/Govt. Engineer account created! Credentials sent via email.")
             return redirect('admin_dashboard')
     else:
         form = AdminUserCreationForm()
@@ -138,7 +147,120 @@ def unauthorized_access(request):
     return render(request, 'unauthorized.html')  # Create unauthorized.html template
 
 @role_required(allowed_roles=['Admin'])
-def update_credential(request):
+def change_user_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            logged_in_user = request.session.get('user_id')  # Get logged-in admin's ID
+
+            try:
+                user = Userstable.objects.get(username=username)
+
+                # Generate a random password
+                new_password = generate_random_password()
+
+                # Update password in plain text
+                user.password = new_password
+                user.save()
+
+                # Send the new password via email (only if Admin/Gov Engineer)
+                send_mail(
+                    subject='Your Password Has Been Updated',
+                    message=f'Your new password is: {new_password}',
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[username],  # Using username as email
+                    fail_silently=False,
+                )
+
+                # messages.success(request, f'Password updated and emailed to {username}')
+
+                # If the admin changed their own password, force logout and ask them to re-login
+                if user.id == logged_in_user:
+                    messages.warning(request, "You changed your own password. Please log in again.")
+                    request.session.flush()  # Clears the session
+                    return redirect('login')
+
+                messages.success(request, f"User {username}'s password has been changed successfully.")
+                return redirect('admin_dashboard')
+
+            except Userstable.DoesNotExist:
+                messages.error(request, 'User not found.')
+
+    else:
+        form = PasswordChangeForm()
+
+    return render(request, 'change_password.html', {'form': form})
+
+@role_required(allowed_roles=['Admin'])
+def delete_user(request):
+    if request.method == 'POST':
+        form = DeleteCredentialForm(request.POST)
+        if form.is_valid():  # Ensure validation passes before proceeding
+            username = form.cleaned_data['username']
+            logged_in_user_id = request.session.get('user_id')  # Current admin's ID
+
+            try:
+                user = Userstable.objects.get(username=username)
+
+                # Ensure admin cannot delete themselves
+                if user.id == logged_in_user_id:
+                    messages.error(request, "You cannot delete your own credential.")
+                    return redirect('delete_user')
+
+                # Delete user credentials
+                user.delete()
+
+                # Send email notification
+                send_mail(
+                    subject="Your Account Has Been Deleted",
+                    message=f"Hello {username},\n\nYour account has been deleted by the Admin.\n\n",
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[username],  # Assuming username is email
+                    fail_silently=False,
+                )
+
+                messages.success(request, f"User {username} has been deleted successfully.")
+                return redirect('admin_dashboard')
+
+            except Userstable.DoesNotExist:
+                messages.error(request, "User not found.")
+        else:
+            # If the form is not valid, Django will handle showing the errors
+            messages.error(request, "Invalid form submission. Please check the details.")
+    
+    else:
+        form = DeleteCredentialForm()
+
+    return render(request, 'delete_credential.html', {'form': form})
+
+@role_required(allowed_roles=['Normal User', 'Entrepreneur', 'Researcher'])
+def update_credentials(request):
+    if request.method == 'POST':
+        form = NormalUserCredentialUpdateForm(request.POST)
+        if form.is_valid():
+            new_username = form.cleaned_data.get('new_username')
+            new_password = form.cleaned_data.get('new_password')
+            user = Userstable.objects.get(id=request.session['user_id'])
+
+            user.username = new_username
+            user.password = new_password
+            user.save()
+            messages.success(request, 'Your credentials have been successfully updated.')
+            user_logout(request)
+            return redirect('login')
+        else:
+            messages.error(request, 'Please correct the errors below.')
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field.capitalize()}: {error}")
+    else:
+        form = NormalUserCredentialUpdateForm()
+
+    return render(request, 'update_credentials.html', {'form': form})
+
+@role_required(allowed_roles=['Admin'])
+def update_upperlevel(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.POST)
         if form.is_valid():
@@ -174,42 +296,12 @@ def update_credential(request):
 
     return render(request, 'change_password.html', {'form': form})
 
-@role_required(allowed_roles=['Admin'])
-def delete_user(request):
-    if request.method == 'POST':
-        form = DeleteUserForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-
-            try:
-                user = Userstable.objects.get(username=username)
-                
-                user_email = user.username
-
-                user.delete()
-
-                send_mail(
-                    subject='Your Account Has Been Deleted',
-                    message='Your account has been removed by the administrator.',
-                    from_email=settings.EMAIL_HOST_USER,
-                    recipient_list=[user_email],
-                    fail_silently=False,
-                )
-
-                messages.success(request, f'User {username} has been deleted.')
-                return redirect('admin_dashboard')
-
-            except Userstable.DoesNotExist:
-                messages.error(request, 'User not found.')
-
-    else:
-        form = DeleteUserForm()
-
-    return render(request, 'delete_user.html', {'form': form})
 
 def p_home(request):
     return render(request, "index_p.html")
 
+def about(request):
+    return render(request, 'about.html') 
 
 @role_required(allowed_roles=['Admin', 'Government Engineer', 'Researcher', 'Entrepreneur'])
 def residential_clusters(request):
@@ -228,7 +320,6 @@ def residential_clusters(request):
     y_kmeans = kmeans.fit_predict(X_pca)
     rdf['cluster'] = y_kmeans
 
-    # Define cluster labels and colors
     cluster_info = {
         0: {'color': 'red', 'label': 'High Electricity Demand'},
         1: {'color': 'orange', 'label': 'Medium Electricity Demand'},
@@ -249,7 +340,7 @@ def residential_clusters(request):
 
     this_map.fit_bounds(this_map.get_bounds())
 
-    # Adding a legend to the map
+
     legend_html = '''
      <div style="position: fixed; 
                  bottom: 50px; left: 50px; width: 250px; height: 120px; 
@@ -278,13 +369,12 @@ def electricity_demand_plot(request):
     if not os.path.exists(dataset_path):
         return render(request, 'electricity_demand_hourly.html', {'error': 'Dataset not found!'})
 
-    # Load dataset with exception handling
     try:
         df = pd.read_csv(dataset_path, parse_dates=['timestamp'])
     except Exception as e:
         return render(request, 'electricity_demand_hourly.html', {'error': f'Error loading dataset: {str(e)}'})
 
-    # Get selected date from request
+
     selected_date = request.GET.get('date', '2023-01-01')
 
     try:
@@ -292,21 +382,20 @@ def electricity_demand_plot(request):
     except ValueError:
         return render(request, 'electricity_demand_hourly.html', {'error': 'Invalid date format! Use YYYY-MM-DD.'})
 
-    # Filter dataset for the selected date
+
     df_day = df[df['timestamp'].dt.date == selected_date]
 
     if df_day.empty:
         return render(request, 'electricity_demand_hourly.html', {'error': 'No data found for the selected date!'})
 
-    # Select only required columns
+
     df_selected = df_day[['timestamp', 'electricity_demand', 'solar_generation']].copy()
     df_table_html = df_selected.to_html(classes="table table-striped table-dark", index=False)
 
-    # Identify peak and lowest electricity demand points
     peak_point = df_day.loc[df_day['electricity_demand'].idxmax()]
     lowest_point = df_day.loc[df_day['electricity_demand'].idxmin()]
 
-    # Create a Plotly figure
+
     fig = go.Figure()
 
     fig.add_trace(go.Scatter(
@@ -387,10 +476,10 @@ def electricity_demand_plot_daily(request):
     if df_30_days.empty:
         return render(request, 'electricity_demand_daily.html', {'error': 'No data found for the selected period!'})
 
-    # Filter required columns
+
     df_filtered = df_30_days[['timestamp', 'electricity_demand', 'solar_generation']]
 
-    # Plotly graph
+
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=df_30_days['timestamp'], y=df_30_days['electricity_demand'],
@@ -415,13 +504,13 @@ def electricity_demand_plot_daily(request):
 
     graph_html = pio.to_html(fig, full_html=False)
 
-    # Convert Selected Columns to HTML Table
+
     df_table_html = df_filtered.to_html(classes="table table-bordered table-striped table-dark", index=False)
 
     return render(request, 'electricity_demand_daily.html', {
         'plot_div': graph_html,
         'selected_date': selected_date,
-        'df_table_html': df_table_html  # Pass the filtered table to the template
+        'df_table_html': df_table_html
     })
 
 @role_required(allowed_roles=['Admin', 'Government Engineer', 'Normal User', 'Researcher', 'Entrepreneur'])
@@ -497,7 +586,6 @@ def electricity_demand_plot_monthly(request):
 
     graph_html = pio.to_html(fig, full_html=False)
 
-    # Convert DataFrame to HTML table (only required columns)
     df_table_html = df_12_months[['timestamp', 'electricity_demand', 'solar_generation']].to_html(classes="table table-striped table-dark", index=False)
 
     return render(request, 'electricity_demand_monthly.html', {
@@ -526,10 +614,9 @@ def electricity_demand_prediction(request):
 
     df = pd.read_csv(dataset_path, parse_dates=['timestamp'])
 
-    # Get the selected date from the form
     selected_date = request.GET.get('date', None)
     
-    if not selected_date:  # Default only if no date is provided
+    if not selected_date:
         selected_date = '2025-01-01'
 
     try:
@@ -546,7 +633,7 @@ def electricity_demand_prediction(request):
     if model is None:
         return render(request, 'electricity_demand_prediction.html', {'error': 'Prediction model not found in myapp/data/!', 'selected_date': selected_date})
 
-    # Extract features
+
     df_day['year'] = df_day['timestamp'].dt.year
     df_day['month'] = df_day['timestamp'].dt.month
     df_day['hour_of_day'] = df_day['timestamp'].dt.hour
@@ -609,7 +696,7 @@ def electricity_demand_prediction(request):
 
     graph_html = pio.to_html(fig, full_html=False)
 
-    # Convert predicted DataFrame to HTML table for display
+
     df_day_display = df_day[['timestamp', 'predicted_demand']].to_html(classes="table table-striped text-white", index=False)
 
     return render(request, 'electricity_demand_prediction.html', {
@@ -617,3 +704,204 @@ def electricity_demand_prediction(request):
         'selected_date': selected_date,
         'predicted_table': df_day_display
     })
+
+
+
+os.environ["GROQ_API_KEY"] = "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"
+client = groq.Client(api_key=os.getenv("GROQ_API_KEY"))
+
+
+model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+
+
+csv_file = os.path.join(os.path.dirname(__file__), 'data', 'ResidentialAreasNeighbourhood_Here_Final.csv')
+
+
+def load_data_and_create_index():
+    if not os.path.exists(csv_file):
+        return None, None, "Error: CSV file not found!" 
+
+
+    df = pd.read_csv(csv_file)
+    if "content" not in df.columns:
+        return None, None, "Error: 'content' column missing in CSV!"
+
+    text_chunks = df["content"].dropna().tolist()
+    if not text_chunks:
+        return None, None, "Error: No valid text chunks found!"
+
+
+    embeddings = model.encode(text_chunks, convert_to_numpy=True).astype(np.float32)
+
+
+    index = faiss.IndexFlatL2(embeddings.shape[1])
+    index.add(embeddings)
+
+    return index, text_chunks, None
+
+
+def search_faiss(query, index, text_chunks, top_k=5):
+    if index is None or not text_chunks:
+        return ["Error: FAISS index or text chunks missing!"]
+
+    query_embedding = model.encode([query]).astype(np.float32)
+    distances, indices = index.search(query_embedding, top_k)
+
+    valid_results = [text_chunks[i] for i in indices[0] if 0 <= i < len(text_chunks)]
+
+    return valid_results if valid_results else ["Sorry, no relevant results found."]
+
+
+def query_groq(query, retrieved_chunks):
+    
+    context = "\n".join(retrieved_chunks)
+
+    prompt = f"""
+    You are an AI assistant helping with location-based queries.
+    Use the following retrieved information to answer the question:
+
+    {context}
+
+    Question: {query}
+    Answer:
+    """
+
+    response = client.chat.completions.create(
+        model="llama3-8b-8192",
+        messages=[
+            {"role": "system", "content": "You are a helpful AI."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=300
+    )
+
+    return response.choices[0].message.content
+
+
+def chatbot_ui(request):
+    return render(request, "chatbot.html", {"response": None, "query": None})
+
+
+@csrf_exempt
+def chatbot_query(request):
+    if request.method == "POST":
+        user_query = request.POST.get("query", "").strip()
+
+        if not user_query:
+            return render(request, "chatbot.html", {"error": "No query provided", "response": None, "query": None})
+
+
+        index, text_chunks, error = load_data_and_create_index()
+
+        if error:
+            return render(request, "chatbot.html", {"error": error, "response": None, "query": None})
+
+        retrieved_chunks = search_faiss(user_query, index, text_chunks)
+
+
+        bot_response = query_groq(user_query, retrieved_chunks)
+
+        return render(request, "chatbot.html", {"response": bot_response, "query": user_query})
+
+    return render(request, "chatbot.html", {"response": None, "query": None})
+
+
+#CHATBOT
+
+
+
+os.environ["GROQ_API_KEY"] = "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"
+client = groq.Client(api_key=os.getenv("GROQ_API_KEY"))
+
+
+model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+
+
+csv_file = "C:/Users/ASUS/Desktop/Django Projects/Learn1/Delhi-Power-Prediction/Learn1/myapp/text_chunks.txt"
+if os.path.exists(csv_file):
+    with open(csv_file, "r") as f:
+        text_chunks = f.read().splitlines()
+else:
+    text_chunks = []
+
+
+if text_chunks:
+    embeddings = model.encode(text_chunks, show_progress_bar=True)
+    embedding_dim = embeddings.shape[1]
+
+    index = faiss.IndexFlatL2(embedding_dim)
+    index.add(np.array(embeddings, dtype=np.float32))
+
+    faiss_index_path = "faiss_index.bin"
+    faiss.write_index(index, faiss_index_path)
+else:
+    index = None
+
+
+def search_faiss(query, top_k=5):
+    """Search the FAISS index for the most relevant text chunks."""
+    if index is None:
+        return ["Error: FAISS index not found!"]
+
+    query_embedding = model.encode([query])
+    distances, indices = index.search(query_embedding, top_k)
+
+    return [text_chunks[i] for i in indices[0] if 0 <= i < len(text_chunks)]
+
+
+def query_groq(query, retrieved_chunks):
+    """Query Groq's LLM with retrieved chunks for a contextual response."""
+    context = "\n".join(retrieved_chunks)
+
+    prompt = f"""
+    You are an AI assistant helping with location-based queries.
+    Use the following retrieved information to answer the question:
+
+    {context}
+
+    Question: {query}
+    Answer:
+    """
+
+    response = client.chat.completions.create(
+        model="llama3-8b-8192",
+        messages=[
+            {"role": "system", "content": "You are a helpful AI."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=300
+    )
+
+    return response.choices[0].message.content
+
+
+@csrf_exempt
+def chatbot_view(request):
+    """Handles user queries, stores chat history, and renders response to chatbot.html"""
+    
+    # Initialize chat history if not already in session
+    if "chat_history" not in request.session:
+        request.session["chat_history"] = []
+
+    if request.method == "POST":
+        user_query = request.POST.get("query", "").strip()
+
+        if not user_query:
+            return render(request, "chatbot.html", {"error": "Please enter a query.", "chat_history": request.session["chat_history"]})
+
+        # Retrieve relevant data from FAISS
+        retrieved_chunks = search_faiss(user_query)
+        
+        # Generate chatbot response
+        bot_response = query_groq(user_query, retrieved_chunks)
+
+        # Update chat history
+        request.session["chat_history"].append({"user_type": "user", "text": f"You: {user_query}"})
+        request.session["chat_history"].append({"user_type": "bot", "text": f"Bot: {bot_response}"})
+
+        # Save session updates
+        request.session.modified = True
+
+        return render(request, "chatbot.html", {"chat_history": request.session["chat_history"]})
+
+    return render(request, "chatbot.html", {"chat_history": request.session["chat_history"]})
