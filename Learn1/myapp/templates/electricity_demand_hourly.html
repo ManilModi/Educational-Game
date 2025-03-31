@@ -67,7 +67,7 @@
 
             {% if compensation_methods %}
             <div class="container mt-4">
-                <h3 class="text-info">Compensation Methods for {{ selected_date }}</h3>
+                {% comment %} <h3 class="text-info">Compensation Methods for {{ selected_date }}</h3> {% endcomment %}
                 <div class="row">
                     {% for method in compensation_methods %}
                         <div class="col-md-4">
@@ -81,7 +81,7 @@
                 </div>
             </div>
             {% else %}
-                <p class="text-warning text-center mt-3">No compensation methods available for the selected date.</p>
+                {% comment %} <p class="text-warning text-center mt-3">No compensation methods available for the selected date.</p> {% endcomment %}
             {% endif %}
 
             {% if df_table_html %}

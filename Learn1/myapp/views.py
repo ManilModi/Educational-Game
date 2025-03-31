@@ -42,16 +42,13 @@ def user_login(request):
             try:
                 user = Userstable.objects.get(username=username)
                 
-                if user.password == password:  # (Consider hashing passwords)
-                    # Fetch the user's role
+                if user.password == password:
                     user_role = UserRole.objects.get(user=user)
-                    role_name = user_role.role.role_names  # Get the role name
+                    role_name = user_role.role.role_names
 
-                    # Store in session
                     request.session['user_id'] = user.id
                     request.session['user_role'] = role_name
 
-                    # Redirect based on role
                     if role_name == "Admin":
                         return redirect('admin_dashboard')
                     elif role_name == "Government Engineer":
@@ -73,40 +70,39 @@ def user_login(request):
 
     return render(request, 'login.html', {'form': form}) 
 
-# User Logout View
 def user_logout(request):
-    request.session.flush()  # Clear session
+    request.session.flush()
     return redirect('login')
 
-# Dashboard Views
+
 @role_required(allowed_roles=['Admin'])
 def admin_dashboard(request):
     if 'user_id' not in request.session:
-        return redirect('login')  # Force login if not authenticated
+        return redirect('login')
     return render(request, 'admin_dashboard.html')
 
 @role_required(allowed_roles=['Government Engineer'])
 def govt_dashboard(request):
     if 'user_id' not in request.session:
-        return redirect('login')  # Force login if not authenticated
+        return redirect('login')
     return render(request, 'govt_dashboard.html')
 
 @role_required(allowed_roles=['Normal User'])
 def normal_dashboard(request):
     if 'user_id' not in request.session:
-        return redirect('login')  # Force login if not authenticated
+        return redirect('login')
     return render(request, 'normal_dashboard.html')
 
 @role_required(allowed_roles=['Entrepreneur'])
 def entrepreneur_dashboard(request):
     if 'user_id' not in request.session:
-        return redirect('login')  # Force login if not authenticated
+        return redirect('login')
     return render(request, 'entrepreneur_dashboard.html')
 
 @role_required(allowed_roles=['Researcher'])
 def researcher_dashboard(request):
     if 'user_id' not in request.session:
-        return redirect('login')  # Force login if not authenticated
+        return redirect('login')
     return render(request, 'researcher_dashboard.html')
 
 def user_register(request):
@@ -114,7 +110,6 @@ def user_register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            # messages.success(request, "Account created successfully!")
             return redirect('login')
     else:
         form = UserRegistrationForm()
@@ -763,7 +758,7 @@ def query_groq(query, retrieved_chunks):
     {context}
 
     Question: {query}
-    Answer:
+    Answer: 
     """
 
     response = client.chat.completions.create(
@@ -776,11 +771,6 @@ def query_groq(query, retrieved_chunks):
     )
 
     return response.choices[0].message.content
-
-
-def chatbot_ui(request):
-    return render(request, "chatbot.html", {"response": None, "query": None})
-
 
 @csrf_exempt
 def chatbot_query(request):
@@ -808,13 +798,6 @@ def chatbot_query(request):
 
 #CHATBOT
 
-
-
-os.environ["GROQ_API_KEY"] = "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"
-client = groq.Client(api_key=os.getenv("GROQ_API_KEY"))
-
-
-model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 
 csv_file = "C:/Users/ASUS/Desktop/Django Projects/Learn1/Delhi-Power-Prediction/Learn1/myapp/text_chunks.txt"
@@ -874,14 +857,20 @@ def query_groq(query, retrieved_chunks):
 
     return response.choices[0].message.content
 
-
 @csrf_exempt
+@role_required(allowed_roles=['Admin', 'Government Engineer', "Entrepreneur", "Researcher", "Normal User"])
 def chatbot_view(request):
     """Handles user queries, stores chat history, and renders response to chatbot.html"""
-    
-    # Initialize chat history if not already in session
+
     if "chat_history" not in request.session:
-        request.session["chat_history"] = []
+        request.session["chat_history"] = [
+            {
+                "user_type": "bot",
+                "text": "Hello! I'm an AI Assistant to help you with NCT Delhi area-based location queries and the facilities in those areas. So tell me, how can I assist you today?",
+            }
+        ]
+
+        request.session.modified = True
 
     if request.method == "POST":
         user_query = request.POST.get("query", "").strip()
@@ -889,17 +878,13 @@ def chatbot_view(request):
         if not user_query:
             return render(request, "chatbot.html", {"error": "Please enter a query.", "chat_history": request.session["chat_history"]})
 
-        # Retrieve relevant data from FAISS
         retrieved_chunks = search_faiss(user_query)
         
-        # Generate chatbot response
         bot_response = query_groq(user_query, retrieved_chunks)
 
-        # Update chat history
         request.session["chat_history"].append({"user_type": "user", "text": f"You: {user_query}"})
         request.session["chat_history"].append({"user_type": "bot", "text": f"Bot: {bot_response}"})
 
-        # Save session updates
         request.session.modified = True
 
         return render(request, "chatbot.html", {"chat_history": request.session["chat_history"]})

@@ -30,15 +30,15 @@ class UserRegistrationForm(forms.ModelForm):
         if commit:
             user.save()
             role = self.cleaned_data['role']
-            UserRole.objects.create(user=user, role=role)  # Link user to role
+            UserRole.objects.create(user=user, role=role)
         return user
 
-# Function to Generate Random Password
+
 def generate_random_password(length=8):
-    characters = string.ascii_letters + string.digits  # Letters + Numbers
+    characters = string.ascii_letters + string.digits
     return ''.join(random.choice(characters) for _ in range(length))
 
-# Admin-Only Form to Create Admin/Govt. Engineers
+
 import socket
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
@@ -52,26 +52,23 @@ class AdminUserCreationForm(forms.ModelForm):
 
     class Meta:
         model = Userstable
-        fields = ['username']  # Only Username Field
+        fields = ['username']
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
 
         if username:
-            # Step 1: Check Email Pattern
             try:
                 validate_email(username)
             except ValidationError:
                 raise forms.ValidationError("Please enter a valid email address as username for Admin or Government Engineer.")
 
-            # Step 2: Check if Email Already Exists
             if Userstable.objects.filter(username=username).exists():
                 raise forms.ValidationError("This email is already taken. Please choose a different one.")
 
-            # Step 3: Check if Domain Exists (DNS Lookup)
             domain = username.split('@')[-1]
             try:
-                socket.gethostbyname(domain)  # Check if domain exists
+                socket.gethostbyname(domain)
             except socket.gaierror:
                 raise forms.ValidationError("Invalid email domain. Please enter a valid email address.")
 
@@ -112,13 +109,11 @@ class DeleteCredentialForm(forms.Form):
         try:
             user = Userstable.objects.get(username=username)
 
-            # Fetch user's role
             try:
                 user_role = UserRole.objects.get(user=user).role.role_names
             except UserRole.DoesNotExist:
                 raise forms.ValidationError("This user has no assigned role and cannot be deleted.")
 
-            # Ensure only Admin or Government Engineer can be deleted
             if user_role not in ['Admin', 'Government Engineer']:
                 raise forms.ValidationError("You can only delete Admin or Government Engineer accounts.")
 
@@ -141,7 +136,7 @@ class NormalUserCredentialUpdateForm(forms.ModelForm):
 
     class Meta:
         model = Userstable
-        fields = []  # No default fields from model
+        fields = []
 
     def clean(self):
         cleaned_data = super().clean()

@@ -20,8 +20,8 @@
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'electricity_demand_plot' %}">Analysis</a></li>
             <li><a href="{% url 'electricity_demand_prediction' %}">Predictions</a></li>
-            <li><a href="{% url 'residential_clusters' %}">Geographical Map</a></li>
-            <li><a href="{% url 'chatbot_query' %}">AI Assistance</a></li>
+            <li><a href="{% url 'residential_clusters' %}">GeoMap</a></li>
+            <li><a href="{% url 'chatbot_query' %}">SmartFAQs</a></li>
             {% if request.session.user_id %}
             <li><a href="{% url 'logout' %}">Logout</a></li>
             {% endif %}

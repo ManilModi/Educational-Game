@@ -21,9 +21,9 @@
             <li><a href="{% url 'electricity_demand_plot' %}">Analysis</a></li>
             <li><a href="{% url 'electricity_demand_prediction' %}">Predictions</a></li>
             <li><a href="{% url 'residential_clusters' %}">GeoMap</a></li>
-            <li><a href="{% url 'chatbot_query' %}">AI Assistance</a></li>
+            <li><a href="{% url 'chatbot_query' %}">SmartFAQs</a></li>
             <li><a href="{% url 'admin_create_user' %}"> Give Credentials</a></li>
-            <li><a href="{% url 'update_upperlevel' %}"> Update Credentials</a></li>
+            <li><a href="{% url 'change_user_password' %}"> Update Credentials</a></li>
             <li><a href="{% url 'delete_user' %}"> Delete Credentials</a></li>
             {% if request.session.user_id %}
             <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -48,6 +48,12 @@
           </ul>
         </nav>
       </header>
+
+      {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-danger">{{ message }}</div>
+      {% endfor %}
+  {% endif %}
 
       <section class="home-page">
         <div class="view">

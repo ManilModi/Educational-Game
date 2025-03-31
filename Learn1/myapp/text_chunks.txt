@@ -403,4 +403,3 @@ Area: JD Cambridge Building, Location: (28.62544, 77.29884), Eat and Drink: 82, 
 Area: Anjali New Brijpuri, Location: (28.64477, 77.2824), Eat and Drink: 92, Entertainment: 62, Transport: 4, Leisure: 17, Shopping: 100, Services: 100, Facilities: 100.
 Area: Ankur Residency, Location: (28.63628, 77.3041), Eat and Drink: 94, Entertainment: 33, Transport: 7, Leisure: 12, Shopping: 100, Services: 100, Facilities: 100.
 Area: Hira Wool House, Location: (28.63607, 77.27942), Eat and Drink: 100, Entertainment: 64, Transport: 30, Leisure: 100, Shopping: 100, Services: 100, Facilities: 100.
-
